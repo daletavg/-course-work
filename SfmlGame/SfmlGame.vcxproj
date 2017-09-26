@@ -67,8 +67,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="block.cpp" />
-    <ClCompile Include="bot.cpp" />
+    <ClCompile Include="botFox.cpp" />
     <ClCompile Include="character.cpp" />
+    <ClCompile Include="enamies.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="game_map.cpp" />
     <ClCompile Include="gui.cpp" />
@@ -90,12 +91,13 @@
   <ItemGroup>
     <ClInclude Include="armor.h" />
     <ClInclude Include="block.h" />
-    <ClInclude Include="bot.h" />
+    <ClInclude Include="botFox.h" />
     <ClInclude Include="bottleHealth.h" />
     <ClInclude Include="character.h" />
     <ClInclude Include="chess.h" />
     <ClInclude Include="coins.h" />
     <ClInclude Include="door.h" />
+    <ClInclude Include="enamies.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="frame.h" />
     <ClInclude Include="game.h" />

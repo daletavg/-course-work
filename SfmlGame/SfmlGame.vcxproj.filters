@@ -43,6 +43,9 @@
     <Filter Include="Header Files\Blocks\Item Chess">
       <UniqueIdentifier>{cf21d7de-4b18-43b3-9fac-45ff2331f8e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Blocks\Item Chess\Armor">
+      <UniqueIdentifier>{7db264b6-3185-4d61-92a1-f7b75a90c062}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TinyXML\tinyxml.cpp">
@@ -88,9 +91,12 @@
       <Filter>Source Files\characters</Filter>
     </ClCompile>
     <ClCompile Include="menusettings.cpp">
+      <Filter>Source Files\Special</Filter>
+    </ClCompile>
+    <ClCompile Include="enamies.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bot.cpp">
+    <ClCompile Include="botFox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -159,28 +165,31 @@
     <ClInclude Include="player.h">
       <Filter>Header Files\characters</Filter>
     </ClInclude>
-    <ClInclude Include="nullblock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="bottleHealth.h">
       <Filter>Header Files\Blocks\Item Chess</Filter>
     </ClInclude>
     <ClInclude Include="coins.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="menusettings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="nextlvl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hauberkArmor.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Blocks\Item Chess</Filter>
     </ClInclude>
     <ClInclude Include="armor.h">
+      <Filter>Header Files\Blocks\Item Chess\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="hauberkArmor.h">
+      <Filter>Header Files\Blocks\Item Chess\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="menusettings.h">
+      <Filter>Header Files\Special</Filter>
+    </ClInclude>
+    <ClInclude Include="nextlvl.h">
+      <Filter>Header Files\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="nullblock.h">
+      <Filter>Header Files\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="enamies.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="botFox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

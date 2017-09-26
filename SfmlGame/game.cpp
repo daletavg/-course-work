@@ -20,12 +20,15 @@ game::game()
 	window.clear();
 
 	_gameMap.initLevel();
-	_player.setPlayer("rogue.png", 43, 120, 33, 45, _gameMap.getSpawn().left, _gameMap.getSpawn().top);
+	_gameMap.addGameMap(&_gameMap);
+	_player.setPlayer("rogue.png", 40, 111, 31, 42, _gameMap.getSpawn().left, _gameMap.getSpawn().top);
 	_player.addWindow(window);
 	
 	_player.setMap(&_gameMap);
 	_player.setTime(&_time);
 	_gui.setPlayerGui(&_player);
+
+	_bots.initBots(&_gameMap);
 
 	updateGame();
 
@@ -59,6 +62,7 @@ void game::updateGame()
 		updateItem();///game character, map update
 		
 		_gameMap.drawAbovePlayer(window);
+		_bots.Draw(window);
 		_gui.drawBlack(window);
 		if (!_gui.isWorkMenu())
 		{
@@ -66,7 +70,7 @@ void game::updateGame()
 		}
 		_gui.Draw(window);
 		_gui.menu(window);
-
+		
 
 		window.display();
 	}

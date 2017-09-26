@@ -103,6 +103,20 @@ void game_map::setBlocks(sf::String name, vector<Object> object){
 	}
 }
 
+//void game_map::setBots(sf::String name, vector<Object> object)
+//{
+//	if (name=="foxBot")
+//	{
+//		for (size_t i = 0; i < object.size(); i++)
+//		{
+//			foxBot* fox = new foxBot("fox.png", 2, 0, 23, 31, object[i].rect.left, object[i].rect.top);
+//			fox->setMap(_gameMap);
+//			//fox->serchBotBox();
+//			_bots.push_back(fox);
+//		}
+//	}
+//}
+
 void game_map::initLevel()
 {
 	char tmpString[20];
@@ -120,6 +134,9 @@ void game_map::initLevel()
 	setBlocks("doorright", "Tileset.png", lvl.GetObjects("doorright"), 1008, 48, 48, 48);
 	setBlocks("door", "Tileset.png", lvl.GetObjects("door"), 1008, 48, 48, 48);
 	setBlocks("nextlvl", lvl.GetObjects("nextlvl"));
+
+	//setBots("foxBot", lvl.GetObjects("foxBot"));
+
 	//setBlocks("bottleHealth", "items.png", lvl.GetObjects("bottle"), 49, 289, 25, 36);
 	//bottleHealth* fr = new bottleHealth("bottleHealth", "items.png", sf::FloatRect(0,0,0,0), 49, 289, 25, 36);
 	//_Blocks.push_back(fr);
@@ -146,6 +163,10 @@ frame* game_map::getBlock(int index) {
 	
 			return _Blocks[index];
 	
+}
+vector<Object> game_map::getBlock(sf::String name)
+{
+	return lvl.GetObjects(name);
 }
 sf::FloatRect& game_map::getBlockRect(int i) {
 	return _Blocks[i]->getRectPos();

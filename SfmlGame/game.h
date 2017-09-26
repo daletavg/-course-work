@@ -1,8 +1,9 @@
 #pragma once
+
 #include "player.h"
 #include "menu.h"
 #include "game_map.h"
-
+#include "enamies.h"
 #include "gui.h"
 using  namespace sf;
 
@@ -14,6 +15,8 @@ private:
 	player _player;
 	menu _menuGame;
 	game_map _gameMap;
+	enamies _bots;
+
 
 	gui _gui;
 

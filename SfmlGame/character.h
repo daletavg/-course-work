@@ -20,7 +20,7 @@ private:
 	float _Speed;
 	int _Damage;
 	int _Score=0;
-	
+	bool _isDead = false;
 	
 
 	DIR _dir;
@@ -50,6 +50,9 @@ public:
 	}
 	void setMap(game_map* mp) {
 		_map = mp;
+	}
+	bool isDead() {
+		return _isDead;
 	}
 
 	virtual void collision(float Dx, float Dy)=0;

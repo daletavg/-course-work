@@ -3,10 +3,10 @@
 enum armors
 {
 	leather = 0,
-	hauberk = 50,
+	hauberk = 46,
 };
 class armor :
-	public frame
+	public frame 
 {
 protected:
 	sf::Font _font;

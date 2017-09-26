@@ -45,8 +45,5 @@ public:
 
 	game_map * getMap();
 
-
-	
-	~player(); 
 };
 
