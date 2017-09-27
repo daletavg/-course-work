@@ -99,6 +99,9 @@
     <ClCompile Include="botFox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -190,6 +193,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="botFox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="boxbot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

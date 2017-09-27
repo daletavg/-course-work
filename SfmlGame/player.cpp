@@ -11,7 +11,7 @@ void player::moveCharacter()
 			
 			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame)+30, 440+ _armorType, -30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
-
+			//updateAnimation(5, sf::IntRect rect)
 			
 		}
 
@@ -137,6 +137,16 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 				door* dr= dynamic_cast<door*>(_map->getBlock(i));
 				dr->setOpen(true);
 			}
+			if (_map->getName(i) == "boxbot") {
+
+				boxbot * h = dynamic_cast<boxbot *>(_map->getBlock(i));
+				if (h == NULL)
+				{
+					continue;
+				}
+				h->setPlayerCoord(getCoordX() + (getWidth() / 2), getCoorgY() + (getHeight() / 2));
+
+			}
 			if (_map->getName(i) == "nextlvl")
 			{
 				if (Keyboard::isKeyPressed(Keyboard::E))
@@ -144,6 +154,9 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 					_map->loadNextLevel();
 					setRotation(RIGHT);
 					drawInNewPosition(_map->getSpawn().left, _map->getSpawn().top);
+					_bots->loadNextLevel();
+					
+					return;
 				}
 			}
 			

@@ -26,9 +26,12 @@ game::game()
 	
 	_player.setMap(&_gameMap);
 	_player.setTime(&_time);
+	_player.setEnamies(&_bots);
 	_gui.setPlayerGui(&_player);
 
-	_bots.initBots(&_gameMap);
+	_bots.setTime(&_time);
+	_bots.setMap(&_gameMap);
+	_bots.initBots();
 
 	updateGame();
 

@@ -1,0 +1,12 @@
+﻿  game.cpp
+c:\users\akerz\desktop\sfmlgame\sfmlgame\entity.h(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\akerz\desktop\sfmlgame\sfmlgame\entity.h(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\akerz\desktop\sfmlgame\sfmlgame\entity.h(62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\akerz\desktop\sfmlgame\sfmlgame\entity.h(63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\akerz\desktop\sfmlgame\sfmlgame\entity.h(69): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\akerz\desktop\sfmlgame\sfmlgame\entity.h(115): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\akerz\desktop\sfmlgame\sfmlgame\game_map.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\akerz\desktop\sfmlgame\sfmlgame\player.h(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\akerz\desktop\sfmlgame\sfmlgame\game.cpp(42): warning C4244: '=': conversion from 'sf::Int64' to 'float', possible loss of data
+  SfmlGame.vcxproj -> C:\Users\akerz\Desktop\SfmlGame\Debug\SfmlGame.exe
+  SfmlGame.vcxproj -> C:\Users\akerz\Desktop\SfmlGame\Debug\SfmlGame.pdb (Full PDB)

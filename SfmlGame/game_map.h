@@ -4,7 +4,7 @@
 #include "solid.h"
 #include "plate.h"
 #include"grass.h"
-
+#include"boxbot.h"
 #include "chess.h"
 #include"door.h"
 #include"nullblock.h"

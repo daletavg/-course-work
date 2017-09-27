@@ -76,6 +76,14 @@ void game_map::setBlocks(sf::String name, vector<Object> object){
 
 		}
 	}
+	if (name == "boxbot") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			boxbot* fr = new boxbot(name, object[i]);
+			_Blocks.push_back(fr);
+
+		}
+	}
 	if (name == "nextlvl") {
 		for (size_t i = 0; i < object.size(); i++)
 		{
@@ -101,6 +109,7 @@ void game_map::setBlocks(sf::String name, vector<Object> object){
 			 
 		}
 	}
+
 }
 
 //void game_map::setBots(sf::String name, vector<Object> object)
@@ -134,7 +143,7 @@ void game_map::initLevel()
 	setBlocks("doorright", "Tileset.png", lvl.GetObjects("doorright"), 1008, 48, 48, 48);
 	setBlocks("door", "Tileset.png", lvl.GetObjects("door"), 1008, 48, 48, 48);
 	setBlocks("nextlvl", lvl.GetObjects("nextlvl"));
-
+	setBlocks("boxbot", lvl.GetObjects("boxbot"));
 	//setBots("foxBot", lvl.GetObjects("foxBot"));
 
 	//setBlocks("bottleHealth", "items.png", lvl.GetObjects("bottle"), 49, 289, 25, 36);

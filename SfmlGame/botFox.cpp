@@ -5,7 +5,48 @@ using namespace sf;
 
 void botFox::moveCharacter()
 {
+	if (_boxBot->getPlayerX()==getCoordX()&&_boxBot->getPlayerY()==getCoorgY())
+	{
+		return;
+	}
+	_distance = sqrt((_boxBot->getPlayerX()-getCoordX())*( _boxBot->getPlayerX() - getCoordX()) + (_boxBot->getPlayerY() - getCoorgY())*( _boxBot->getPlayerY()- getCoorgY()));//считаем дистанцию (длину от точки ј до точки Ѕ). формула длины вектора
+
+	if (_distance > 2) {//этим условием убираем дергание во врем€ конечной позиции спрайта
+
+		_posX += 0.1*(*_time)*( _boxBot->getPlayerX() - getCoordX()) / _distance;//идем по иксу с помощью вектора нормали
+		_posY += 0.1*(*_time)*( _boxBot->getPlayerY() - getCoorgY()) / _distance;//идем по игреку так же
+	}
+	
+
 	update();
+}
+void botFox::update()
+{
+	_posX += getDX()*(*_time);
+	_posY += getDY()*(*_time);
+	
+	getSprite().setPosition(_posX, _posY);
+	
+}
+void botFox::searchBoxBot()
+{
+	for (int i = 0; i < _map->getBlock().size(); i++)//проходимс€ по объектам
+	{
+		sf::FloatRect rect = getCharacterRect();
+		sf::FloatRect rect2 = _map->getBlockRect(i);
+
+		if (rect.intersects(rect2))//провер€ем пересечение игрока с объектом
+		{
+
+
+			if (_map->getName(i) == "boxbot")//если встретили преп€тствие
+			{
+				boxbot* b = dynamic_cast<boxbot*>(_map->getBlock(i));
+				_boxBot = b;
+				return;
+			}
+		}
+	}
 }
 
 void botFox::addWindow(sf::RenderWindow & window)

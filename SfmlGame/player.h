@@ -1,5 +1,6 @@
 #pragma once
 #include "character.h"
+#include"enamies.h"
 
 class player :
 	public character
@@ -9,12 +10,20 @@ private:
 	float CurrentFrame = 0;
 	armors _armorType = leather;
 	int _armor = 0;
+	enamies* _bots;
+
 public:
 	player() = default;
 	player(sf::String image, float posImageCharacterX, float posImageCharacterY, float widthImageCharacter, float heightImageCharacter, float posx, float posy)
-		:character("player",image, posImageCharacterX, posImageCharacterY, widthImageCharacter, heightImageCharacter, posx, posy){}
+		:character("player",image, posImageCharacterX, posImageCharacterY, widthImageCharacter, heightImageCharacter, posx, posy){
+		
+	}
 	void setPlayer(sf::String image, float posImageCharacterX, float posImageCharacterY, float widthImageCharacter, float heightImageCharacter, float posx, float posy) {
 		setCharacter("player", image, posImageCharacterX, posImageCharacterY, widthImageCharacter, heightImageCharacter, posx, posy);
+		
+	}
+	void setEnamies(enamies* en) {
+		_bots = en;
 	}
 	virtual void moveCharacter() override;
 	void setArmorType(armors arm)

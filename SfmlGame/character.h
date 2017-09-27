@@ -56,7 +56,7 @@ public:
 	}
 
 	virtual void collision(float Dx, float Dy)=0;
-	void update();
+	virtual void update();
 
 	sf::FloatRect getCharacterRect();
 	

@@ -66,6 +66,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animation.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="botFox.cpp" />
     <ClCompile Include="character.cpp" />
@@ -89,10 +90,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animation.h" />
     <ClInclude Include="armor.h" />
     <ClInclude Include="block.h" />
     <ClInclude Include="botFox.h" />
     <ClInclude Include="bottleHealth.h" />
+    <ClInclude Include="boxbot.h" />
     <ClInclude Include="character.h" />
     <ClInclude Include="chess.h" />
     <ClInclude Include="coins.h" />

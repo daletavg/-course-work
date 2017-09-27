@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="25" tilewidth="48" tileheight="48" nextobjectid="25">
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="20" height="25" tilewidth="48" tileheight="48" nextobjectid="27">
  <tileset firstgid="1" name="Tileset" tilewidth="48" tileheight="48" tilecount="385" columns="35">
   <image source="image/Tileset.png" width="1683" height="545"/>
  </tileset>
@@ -529,6 +529,8 @@
   <object id="21" name="grass" x="816" y="143" width="48" height="49.3333"/>
   <object id="22" name="grass" x="863" y="192.667" width="49.3333" height="46.3333"/>
   <object id="24" name="door" x="384" y="287.75" width="47.75" height="48.25"/>
+  <object id="25" name="boxbot" x="309" y="522" width="522" height="278"/>
+  <object id="26" name="botFox" x="540" y="569" width="53" height="50"/>
  </objectgroup>
  <layer name="Tile Layer 2" width="20" height="25">
   <data>
