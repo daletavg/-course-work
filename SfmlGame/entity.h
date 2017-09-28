@@ -52,6 +52,11 @@ public:
 	void setName(sf::String name) {
 		_Name = name;
 	}
+	void setDefault()
+	{
+		setImagePos(_imageX, _imageY, _width, _height);
+		setSprite();
+	}
 	void setImage(sf::String images)
 	{
 		_pathImage = images;

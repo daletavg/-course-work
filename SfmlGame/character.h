@@ -40,6 +40,14 @@ public:
 		_scaleW = _width*W;
 		_scaleH = _height*H;
 	}
+	void setDead(bool de) 
+	{
+		_isDead = de;
+	}
+	void setScore(int sc)
+	{
+		_Score = sc;
+	}
 	void addScore(int sc)
 	{
 		_Score += sc;
@@ -69,9 +77,15 @@ public:
 	virtual void moveCharacter() = 0;
 	void addHealth(int hp)
 	{
-		if (_HP + hp >= 200)
+		if (_HP+hp<=0)
 		{
-			_HP = 200;
+			_HP = 0;
+			_isDead = true;
+			return;
+		}
+		if (_HP + hp >= 130)
+		{
+			_HP = 130;
 			return;
 
 		}

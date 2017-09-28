@@ -3,6 +3,11 @@ using namespace sf;
 
 void player::moveCharacter()
 {
+	if (getHp()==0)
+	{
+		update();
+		return;
+	}
 
 		if (Keyboard::isKeyPressed(Keyboard::Left)|| Keyboard::isKeyPressed(Keyboard::A)) {
 			setRotation(LEFT);
@@ -12,7 +17,8 @@ void player::moveCharacter()
 			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame)+30, 440+ _armorType, -30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
 			//updateAnimation(5, sf::IntRect rect)
-			
+			update();
+			return;
 		}
 
 		else if (Keyboard::isKeyPressed(Keyboard::Right)|| Keyboard::isKeyPressed(Keyboard::D)) {
@@ -21,8 +27,10 @@ void player::moveCharacter()
 			
 			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame), 440 + _armorType, 30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
-
+			getSprite().setColor(Color::White);
 			setSpeed(0.1);
+			update();
+			return;
 		}
 
 		else if (Keyboard::isKeyPressed(Keyboard::Up) || Keyboard::isKeyPressed(Keyboard::W)) {
@@ -32,7 +40,8 @@ void player::moveCharacter()
 			
 			if (CurrentFrame > 2) CurrentFrame -= 2; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(38 * int(CurrentFrame), 693+ _armorType, 32, 42)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
-
+			update();
+			return;
 		}
 
 		else if (Keyboard::isKeyPressed(Keyboard::Down) || Keyboard::isKeyPressed(Keyboard::S)) {
@@ -43,10 +52,37 @@ void player::moveCharacter()
 
 			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame ) + 30, 440 + _armorType, -30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
-
+			update();
+			return;
 		
 		}
 		update();
+}
+
+void player::update()
+{
+	if (isDead())
+	{
+		if (_dethAnim)
+		{
+				getSprite().setColor(Color::White);
+				CurrentFrame += 0.005*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
+				if (CurrentFrame > 5) { 
+					_dethAnim = false;
+					CurrentFrame -= 5; 
+				} 
+				getSprite().setTextureRect(IntRect(36 * int(CurrentFrame), 823 , 25, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
+				if (!_dethAnim)
+				{
+					getSprite().setTextureRect(IntRect(146, 822, 25, 43));
+				}
+		}
+																									 
+	}
+	else
+	{
+		character::update();
+	}
 }
 
 void player::addWindow(sf::RenderWindow & window)
@@ -77,7 +113,7 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 				if (Dx > 0) { setPosX(_map->getBlockRect(i).left - (_width)) ; }
 				if (Dx < 0) { setPosX(_map->getBlockRect(i).left + _map->getBlockRect(i).width); }
 			}
-			if (_map->getName(i) == "grass")//если встретили препятствие
+			if (_map->getName(i) == "grass")
 			{
 				std::cout << "grass" << std::endl;
 				grass* gr = dynamic_cast<grass*>(_map->getBlock(i));
@@ -92,12 +128,9 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 			if (_map->getName(i) == "chess") {
 				frame* f = _map->getBlock(i);
 				chess* ch = dynamic_cast<chess*>(_map->getBlock(i));
-				//_map->setBlocks(ch->getItems());
+		
 				_map->reBlock(ch->getItems(), i);
-				//bottleHealth* fr = new bottleHealth("bottleHealth", "items.png", sf::FloatRect(0, 0, 25, 36), 49, 289, 25, 36);
 				
-				//_map->setBlocks(fr);
-				//delete f;
 			}
 			if (_map->getName(i) == "bottleHealth") {
 				frame* f = _map->getBlock(i);
@@ -133,6 +166,29 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 					}
 				}
 			}
+			if (_map->getName(i) == "coper") {
+				if (!isDead())
+				{
+					getSprite().setColor(Color::Red);
+				}
+				if (_damageCount>= 9000)
+				{
+					
+					_damageCount -= 9000;
+					
+					coper* ch = dynamic_cast<coper*>(_map->getBlock(i));
+					addHealth(ch->getDamage());
+				}
+				else
+				{
+					_damageCount += (*_time);
+				}
+			}
+			else
+			{
+				_damageCount = 9000;
+				getSprite().setColor(Color::White);
+			}
 			if (_map->getName(i)=="doorright"|| _map->getName(i) == "door"){
 				door* dr= dynamic_cast<door*>(_map->getBlock(i));
 				dr->setOpen(true);
@@ -144,7 +200,7 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 				{
 					continue;
 				}
-				h->setPlayerCoord(getCoordX() + (getWidth() / 2), getCoorgY() + (getHeight() / 2));
+				h->setPlayerCoord(getCoordX() + getWidth(), getCoorgY() + 2);
 
 			}
 			if (_map->getName(i) == "nextlvl")

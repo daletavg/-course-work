@@ -76,6 +76,14 @@ void game_map::setBlocks(sf::String name, vector<Object> object){
 
 		}
 	}
+	if (name == "coper") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			coper* fr = new coper(name, object[i]);
+			_Blocks.push_back(fr);
+
+		}
+	}
 	if (name == "boxbot") {
 		for (size_t i = 0; i < object.size(); i++)
 		{
@@ -143,6 +151,10 @@ void game_map::initLevel()
 	setBlocks("doorright", "Tileset.png", lvl.GetObjects("doorright"), 1008, 48, 48, 48);
 	setBlocks("door", "Tileset.png", lvl.GetObjects("door"), 1008, 48, 48, 48);
 	setBlocks("nextlvl", lvl.GetObjects("nextlvl"));
+	setBlocks("coper", lvl.GetObjects("coper"));
+
+
+
 	setBlocks("boxbot", lvl.GetObjects("boxbot"));
 	//setBots("foxBot", lvl.GetObjects("foxBot"));
 

@@ -11,6 +11,9 @@ private:
 	armors _armorType = leather;
 	int _armor = 0;
 	enamies* _bots;
+	bool _damage = true;
+	int _damageCount = 9000;
+	bool _dethAnim = true;
 
 public:
 	player() = default;
@@ -22,10 +25,25 @@ public:
 		setCharacter("player", image, posImageCharacterX, posImageCharacterY, widthImageCharacter, heightImageCharacter, posx, posy);
 		
 	}
+	void reloadGame()
+	{
+		_map->reloadGame();
+		setRotation(RIGHT);
+		drawInNewPosition(_map->getSpawn().left, _map->getSpawn().top);
+		setScore(0);
+		_armor = 0;
+		setDead(false);
+		_dethAnim = true;
+		_armorType = leather;
+		setDefault();
+		addHealth(100);
+		_bots->loadNextLevel();
+	}
 	void setEnamies(enamies* en) {
 		_bots = en;
 	}
 	virtual void moveCharacter() override;
+	void update();
 	void setArmorType(armors arm)
 	{
 		_armorType = arm;

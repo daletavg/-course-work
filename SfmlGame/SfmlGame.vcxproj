@@ -99,6 +99,7 @@
     <ClInclude Include="character.h" />
     <ClInclude Include="chess.h" />
     <ClInclude Include="coins.h" />
+    <ClInclude Include="coper.h" />
     <ClInclude Include="door.h" />
     <ClInclude Include="enamies.h" />
     <ClInclude Include="entity.h" />

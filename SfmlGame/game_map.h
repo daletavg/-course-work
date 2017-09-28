@@ -9,6 +9,7 @@
 #include"door.h"
 #include"nullblock.h"
 #include "nextlvl.h"
+#include"coper.h"
 //////BOTS////////////////
 
 
@@ -38,6 +39,12 @@ public:
 	void setBlocks(frame * fr);
 	void setBlocks(sf::String name, vector<Object> object);
 	//void setBots(sf::String name, vector<Object> object);
+	void reloadGame()
+	{
+		_lvlCounter = 0;
+		_Blocks.clear();
+		initLevel();
+	}
 	void initLevel();
 	void Draw(sf::RenderWindow& window) {
 		lvl.Draw(window);

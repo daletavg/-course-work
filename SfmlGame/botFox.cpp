@@ -13,8 +13,8 @@ void botFox::moveCharacter()
 
 	if (_distance > 2) {//этим условием убираем дергание во время конечной позиции спрайта
 
-		_posX += 0.1*(*_time)*( _boxBot->getPlayerX() - getCoordX()) / _distance;//идем по иксу с помощью вектора нормали
-		_posY += 0.1*(*_time)*( _boxBot->getPlayerY() - getCoorgY()) / _distance;//идем по игреку так же
+		_posX += 0.07*(*_time)*( _boxBot->getPlayerX() - getCoordX()) / _distance;//идем по иксу с помощью вектора нормали
+		_posY += 0.07*(*_time)*( _boxBot->getPlayerY() - getCoorgY()) / _distance;//идем по игреку так же
 	}
 	
 
@@ -22,10 +22,11 @@ void botFox::moveCharacter()
 }
 void botFox::update()
 {
-	_posX += getDX()*(*_time);
+	/*_posX += getDX()*(*_time);
 	_posY += getDY()*(*_time);
 	
-	getSprite().setPosition(_posX, _posY);
+	getSprite().setPosition(_posX, _posY);*/
+	character::update();
 	
 }
 void botFox::searchBoxBot()
