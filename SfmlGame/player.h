@@ -14,6 +14,7 @@ private:
 	bool _damage = true;
 	int _damageCount = 9000;
 	bool _dethAnim = true;
+	bool _isEnd=false;
 
 public:
 	player() = default;
@@ -24,6 +25,12 @@ public:
 	void setPlayer(sf::String image, float posImageCharacterX, float posImageCharacterY, float widthImageCharacter, float heightImageCharacter, float posx, float posy) {
 		setCharacter("player", image, posImageCharacterX, posImageCharacterY, widthImageCharacter, heightImageCharacter, posx, posy);
 		
+	}
+	void setIsEnd(bool isend) {
+		_isEnd = isend;
+	}
+	bool isEnd() {
+		return _isEnd;
 	}
 	void reloadGame()
 	{

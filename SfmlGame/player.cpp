@@ -8,6 +8,23 @@ void player::moveCharacter()
 		update();
 		return;
 	}
+	if (getDamage()==25)
+	{
+		if (Keyboard::isKeyPressed(Keyboard::LControl))
+		{
+			for (size_t i = 0; i <2; i++)
+			{
+				CurrentFrame += 0.003*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
+
+				if (CurrentFrame > 2) CurrentFrame -= 2; // если пришли к третьему кадру - откидываемся назад.
+				getSprite().setTextureRect(IntRect(40 * int(CurrentFrame), 879 + _armorType, 40, 47)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
+				update();
+				Draw(*_window);
+			}
+			return;
+		}
+		
+	}
 
 		if (Keyboard::isKeyPressed(Keyboard::Left)|| Keyboard::isKeyPressed(Keyboard::A)) {
 			setRotation(LEFT);
@@ -56,6 +73,7 @@ void player::moveCharacter()
 			return;
 		
 		}
+		getSprite().setTextureRect(IntRect(getImageX(), getImageY() + _armorType, getWidth(), getHeight()));
 		update();
 }
 
@@ -153,7 +171,6 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 				
 			}
 			if (_map->getName(i) == "hauberkArmor") {
-				frame* f = _map->getBlock(i);
 				hauberkArmor * h = dynamic_cast<hauberkArmor *>(_map->getBlock(i));
 				if (h->checkArmor(*_window, getArmor(), getCoordX(), getCoorgY())) {
 
@@ -161,6 +178,18 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 					{
 						addArmor(h->getArmor());
 						setArmorType(h->getArmorType());
+						_map->reBlock(NullBlock, i);
+
+					}
+				}
+			}
+			if (_map->getName(i) == "sword") {
+				sword * h = dynamic_cast<sword *>(_map->getBlock(i));
+				if (h->checkSword(*_window, getDamage(), getCoordX(), getCoorgY())) {
+
+					if (Keyboard::isKeyPressed(Keyboard::E))
+					{
+						setDamage(h->getDamage());
 						_map->reBlock(NullBlock, i);
 
 					}
@@ -215,7 +244,16 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 					return;
 				}
 			}
-			
+			if (_map->getName(i) == "endblock")
+			{
+				if (Keyboard::isKeyPressed(Keyboard::E))
+				{
+					endblock* dr = dynamic_cast<endblock*>(_map->getBlock(i));
+					setIsEnd(dr->getEnd());
+
+					return;
+				}
+			}
 
 
 		}

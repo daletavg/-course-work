@@ -18,7 +18,7 @@ private:
 
 	int _HP = 100;
 	float _Speed;
-	int _Damage;
+	int _Damage=0;
 	int _Score=0;
 	bool _isDead = false;
 	
@@ -39,6 +39,14 @@ public:
 	{
 		_scaleW = _width*W;
 		_scaleH = _height*H;
+	}
+	void setDamage(int damage)
+	{
+		_Damage = damage;
+	}
+	int getDamage()
+	{
+		return _Damage;
 	}
 	void setDead(bool de) 
 	{

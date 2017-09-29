@@ -84,6 +84,14 @@ void game_map::setBlocks(sf::String name, vector<Object> object){
 
 		}
 	}
+	if (name == "endblock") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			endblock* fr = new endblock(name, object[i]);
+			_Blocks.push_back(fr);
+
+		}
+	}
 	if (name == "boxbot") {
 		for (size_t i = 0; i < object.size(); i++)
 		{
@@ -152,7 +160,7 @@ void game_map::initLevel()
 	setBlocks("door", "Tileset.png", lvl.GetObjects("door"), 1008, 48, 48, 48);
 	setBlocks("nextlvl", lvl.GetObjects("nextlvl"));
 	setBlocks("coper", lvl.GetObjects("coper"));
-
+	setBlocks("endblock", lvl.GetObjects("endblock"));
 
 
 	setBlocks("boxbot", lvl.GetObjects("boxbot"));

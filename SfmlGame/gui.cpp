@@ -33,26 +33,30 @@ gui::gui()
 	_imgText.loadFromImage(_img);
 	_imgSprite.setTexture(_imgText);
 	_imgSprite.scale(4, 4);
-
+	///////////////////////////////////////////////
+	_end.loadFromFile("image//endgame.png");
+	_endText.loadFromImage(_end);
+	_endSprite.setTexture(_endText);
+	///////////////////////////////////////////////
 	_black.loadFromFile("image//black.png");
 	_blackText.loadFromImage(_black);
 	_blackSprite.setTexture(_blackText);
-
+	///////////////////////////////////////////////
 	_over.loadFromFile("image//gameover.png");
 	 _overText.loadFromImage(_over);
 	_overSprite.setTexture(_overText);
-
+	///////////////////////////////////////////////
 
 
 	_backText.setFont(_font);
 	_backText.setCharacterSize(50);
 	_backText.setString("Back");
-
+	///////////////////////////////////////////////
 
 	_exitText.setFont(_font);
 	_exitText.setCharacterSize(50);
 	_exitText.setString("Exit");
-
+	///////////////////////////////////////////////
 
 }
 
@@ -292,7 +296,12 @@ void gui::gameOver(sf::RenderWindow& window)
 }
 void gui::Draw(sf::RenderWindow & window)
 {
-
+	if (_player->isEnd())
+	{
+		_endSprite.setPosition(_view.getVeiw().x - 400, _view.getVeiw().y - 300);
+		window.draw(_endSprite);
+		return;
+	}
 	char tmp[20];
 	sprintf_s(tmp, "%i", _player->getScore());
 	_score.setString(tmp);

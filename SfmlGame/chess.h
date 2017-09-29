@@ -4,7 +4,7 @@
 #include"bottleHealth.h"
 #include "coins.h"
 #include"hauberkArmor.h"
-
+#include"sword.h"
 
 class chess :
 	public frame
@@ -39,7 +39,9 @@ public:
 			coins* cn = new coins("coins", "items.png", sf::FloatRect(_posX, _posY, 38, 36), 248, 43, 38, 36);
 			f = cn;
 		}*/
-		hauberkArmor* f = new hauberkArmor("hauberkArmor", "items.png", sf::FloatRect(_posX, _posY, 36, 31), 84, 128, 36, 31);
+		//hauberkArmor* f = new hauberkArmor("hauberkArmor", "items.png", sf::FloatRect(_posX, _posY, 36, 31), 84, 128, 36, 31);
+		sword* f = new sword("sword", "items.png", sf::FloatRect(_posX, _posY, 36, 31), 84, 5, 34, 33);
+
 		return f;
 	}
 

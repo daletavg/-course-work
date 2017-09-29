@@ -173,5 +173,12 @@ public:
 	sf::String getName() {
 		return _Name;
 	}
+
+	int getImageX() {
+		return _imageX;
+	}
+	int getImageY() {
+		return _imageY;
+	}
 };
 

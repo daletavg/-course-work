@@ -67,7 +67,7 @@ void game::updateGame()
 		_gameMap.drawAbovePlayer(window);
 		_bots.Draw(window);
 		_gui.drawBlack(window);
-		if (!_gui.isWorkMenu())
+		if (!_gui.isWorkMenu()&& !_player.isEnd())
 		{
 			_player.moveCharacter();
 		}

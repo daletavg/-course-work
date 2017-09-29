@@ -1,158 +1,221 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="coins" Collapsed="true">
-    <Position X="6.25" Y="3.25" Width="1.5" />
+  <Class Name="animation" Collapsed="true">
+    <Position X="35" Y="13.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>coins.h</FileName>
+      <HashCode>AAAAAAAAAAIgAAAAEQAAAIIAAAAAAEAAAAEAAAAQAAA=</HashCode>
+      <FileName>animation.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="menusettings" Collapsed="true">
-    <Position X="7.5" Y="6.25" Width="1.5" />
+  <Class Name="botFox" Collapsed="true">
+    <Position X="21.75" Y="18.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAJAAwBAAgOAAgIgQIAAgAAAAiCAABEAABRBBUQAEAA=</HashCode>
-      <FileName>menusettings.h</FileName>
+      <HashCode>AACAgAIQAgFAgAAAAAAAAAAAAAAAIAIAUAAAAAAEIAA=</HashCode>
+      <FileName>botFox.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="nullblock" Collapsed="true">
-    <Position X="13" Y="3.25" Width="1.5" />
+  <Class Name="boxbot" Collapsed="true">
+    <Position X="30.75" Y="18.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>nullblock.h</FileName>
+      <HashCode>AAAAAAAIAAQAAAABBAAAAAAAAAAAAAAAAAAAgAEAAAA=</HashCode>
+      <FileName>boxbot.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="bot" Collapsed="true">
-    <Position X="4" Y="3.25" Width="1.5" />
+  <Class Name="coper" Collapsed="true">
+    <Position X="35.25" Y="18.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAEAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>bot.h</FileName>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>coper.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="nextlvl" Collapsed="true">
-    <Position X="19.75" Y="3.25" Width="1.5" />
+  <Class Name="enamies" Collapsed="true">
+    <Position X="38.5" Y="13.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
-      <FileName>nextlvl.h</FileName>
+      <HashCode>AEIEAAAAAAAgAgAAAAAAAAAAAAABAAABAAAAAEAQAAA=</HashCode>
+      <FileName>enamies.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="endblock" Collapsed="true">
+    <Position X="42" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>endblock.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="block" Collapsed="true">
-    <Position X="4" Y="5.25" Width="1.5" />
+    <Position X="36.75" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABCAgABAQAAoAAAAKAAAAAAQACAAAAAFAA=</HashCode>
       <FileName>block.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="game_map" Collapsed="true">
-    <Position X="7.5" Y="5.25" Width="1.5" />
+    <Position X="35" Y="14.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIBAAgAIAQEAAggAQIAAAABBQAAEBAgAAAE=</HashCode>
+      <HashCode>AAIAAAAAEIRAAgAIEQEAAggAwIAAAABBQAAEBEgAAAE=</HashCode>
       <FileName>game_map.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="entity" Collapsed="true">
-    <Position X="14" Y="0.5" Width="1.5" />
+    <Position X="30.75" Y="15.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>YAAAgNBgQSCgAgAgJRAEIAACABAgQARGBAAmAQBWQAA=</HashCode>
+      <HashCode>YAAAgNBgQSCgAgAgJRIEIAACABAgQARGBAAmAQBWQAA=</HashCode>
       <FileName>entity.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="frame" Collapsed="true">
-    <Position X="16.25" Y="1.75" Width="1.5" />
+    <Position X="36.5" Y="17.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAIAACAgAAAQAQAAAAAKBACAAAAAAgAQEAAAA=</HashCode>
       <FileName>frame.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="chess" Collapsed="true">
-    <Position X="17.5" Y="3.25" Width="1.5" />
+    <Position X="26.5" Y="18.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>chess.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="door" Collapsed="true">
-    <Position X="22" Y="3.25" Width="1.5" />
+    <Position X="28.25" Y="18.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAIAAAAAgAgAAAAAAAAAEAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>door.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="grass" Collapsed="true">
-    <Position X="24.25" Y="3.25" Width="1.5" />
+    <Position X="33" Y="18.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>grass.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="nextlvl" Collapsed="true">
+    <Position X="37.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>nextlvl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nullblock" Collapsed="true">
+    <Position X="39.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>nullblock.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="opendoor" Collapsed="true">
-    <Position X="26.5" Y="3.25" Width="1.5" />
+    <Position X="44" Y="18.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>opendoor.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="plate" Collapsed="true">
-    <Position X="8.5" Y="3.25" Width="1.5" />
+    <Position X="45.75" Y="18.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAABAAAACgAAAAAAAAAAEAgBCAAAAAAAAAA=</HashCode>
       <FileName>plate.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="solid" Collapsed="true">
-    <Position X="10.75" Y="3.25" Width="1.5" />
+    <Position X="47.5" Y="18.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>solid.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="bottleHealth" Collapsed="true">
-    <Position X="15.25" Y="3.25" Width="1.5" />
+    <Position X="36.5" Y="20" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAAABAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>bottleHealth.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="game" Collapsed="true">
-    <Position X="5.75" Y="5.25" Width="1.5" />
+  <Class Name="coins" Collapsed="true">
+    <Position X="38.75" Y="20" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAgAAAIAAAKSQAAAACAQAAIAAAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>coins.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="armor" Collapsed="true">
+    <Position X="34.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAACACBAAAAAAADAAAAA=</HashCode>
+      <FileName>armor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hauberkArmor" Collapsed="true">
+    <Position X="34.25" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAABAAABAAACAAAAA=</HashCode>
+      <FileName>hauberkArmor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game" Collapsed="true">
+    <Position X="40.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAAAAAAAgAAAIAAAKSQAAAACAQAAIAAAAIAAAAAA=</HashCode>
       <FileName>game.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="gui" Collapsed="true">
-    <Position X="9.25" Y="5.25" Width="1.5" />
+    <Position X="36.75" Y="14.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAgEAAgEAAYAACAgAAACQAACIACAEigAAAAA=</HashCode>
+      <HashCode>AAAEBBBAAgEhwgMEAYAACggAAACQBACIACAEigBAAIA=</HashCode>
       <FileName>gui.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="menu" Collapsed="true">
-    <Position X="5.75" Y="6.25" Width="1.5" />
+    <Position X="40.25" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAQAQAIAgGAAkIAgYAAABgAACGAAQAAAARghgAAACA=</HashCode>
       <FileName>menu.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="menusettings" Collapsed="true">
+    <Position X="35" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAJAAwBAAgOAAgIgQIAAgAAAAiCAABEAABRBBUQAEAA=</HashCode>
+      <FileName>menusettings.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="view" Collapsed="true">
-    <Position X="7.5" Y="7.25" Width="1.5" />
+    <Position X="38.5" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABQAAAAAAAAAAIAAAAABAAAAAQASAAAAAAAAA=</HashCode>
       <FileName>view.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="character" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+    <Position X="23" Y="17.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAJoAAAAAEAAAAABCAECARAKAARAgCEAMAACAAEAAA=</HashCode>
+      <HashCode>AAAJoAAAAAEAAAAABCAECgTAKBERCgCEAMAACAAEAAA=</HashCode>
       <FileName>character.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="player" Collapsed="true">
-    <Position X="1.75" Y="3.25" Width="1.5" />
+    <Position X="24" Y="18.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAgAAQEgEAAAAQAAAAAAAAAAAAAAABQAAAAAAAAAA=</HashCode>
+      <HashCode>AECAgAFQEgUAQQIAAAAQAAAAAAAAABABQAABACAEAAA=</HashCode>
       <FileName>player.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Enum Name="armors" Collapsed="true">
+    <Position X="37" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>armor.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DIR" Collapsed="true">
+    <Position X="38.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>character.h</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

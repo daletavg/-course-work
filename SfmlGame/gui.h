@@ -39,6 +39,11 @@ private:
 	sf::Texture _blackText;
 	sf::Sprite _blackSprite;
 
+	sf::Image _end;
+	sf::Texture _endText;
+	sf::Sprite _endSprite;
+
+
 	sf::Text _backText;
 	sf::Text _exitText;
 

@@ -10,6 +10,7 @@
 #include"nullblock.h"
 #include "nextlvl.h"
 #include"coper.h"
+#include"endblock.h"
 //////BOTS////////////////
 
 

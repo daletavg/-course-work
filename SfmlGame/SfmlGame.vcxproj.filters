@@ -204,6 +204,12 @@
     <ClInclude Include="coper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="endblock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sword.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SfmlGame.rc">
