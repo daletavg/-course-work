@@ -74,6 +74,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="game_map.cpp" />
     <ClCompile Include="gui.cpp" />
+    <ClCompile Include="inventary.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="menu.cpp" />
@@ -110,12 +111,17 @@
     <ClInclude Include="grass.h" />
     <ClInclude Include="gui.h" />
     <ClInclude Include="hauberkArmor.h" />
+    <ClInclude Include="inventary.h" />
+    <ClInclude Include="key.h" />
     <ClInclude Include="level.h" />
+    <ClInclude Include="lockdoor.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="menusettings.h" />
     <ClInclude Include="nextlvl.h" />
     <ClInclude Include="nullblock.h" />
     <ClInclude Include="opendoor.h" />
+    <ClInclude Include="opengold.h" />
+    <ClInclude Include="opensilver.h" />
     <ClInclude Include="plate.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="resource.h" />

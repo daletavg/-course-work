@@ -11,6 +11,9 @@
 #include "nextlvl.h"
 #include"coper.h"
 #include"endblock.h"
+#include"lockdoor.h"
+#include"key.h"
+
 //////BOTS////////////////
 
 

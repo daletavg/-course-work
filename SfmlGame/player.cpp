@@ -1,4 +1,6 @@
 #include "player.h"
+#include"opensilver.h"
+#include"opengold.h"
 using namespace sf;
 
 void player::moveCharacter()
@@ -124,7 +126,7 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 		{
 
 
-			if (_map->getName(i) == "solid")//если встретили препятствие
+			if (_map->getName(i) == "solid"|| _map->getName(i) == "lockdoor")//если встретили препятствие
 			{
 				if (Dy > 0) { setPosY(_map->getBlockRect(i).top - (_height)) ;  _dy = 0; }
 				if (Dy < 0) {setPosY(_map->getBlockRect(i).top + _map->getBlockRect(i).height); }
@@ -182,6 +184,36 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 
 					}
 				}
+			}
+			if (_map->getName(i) == "goldkey") {
+				_map->reBlock(NullBlock, i);
+				_keys.gold = true;
+			}
+			if (_map->getName(i) == "silverkey") {
+				_map->reBlock(NullBlock, i);
+				_keys.silver = true;
+			}
+			if (_map->getName(i) == "opensilver"|| _map->getName(i) == "opensilverright") {
+				opensilver * h = dynamic_cast<opensilver *>(_map->getBlock(i));
+				if (Keyboard::isKeyPressed(Keyboard::E))
+				{
+					if (h->isOpen(*_window, _keys.silver,getCoordX(),getCoorgY(), _map))
+					{
+						_map->reBlock(NullBlock, i);
+					}
+				}
+
+			}
+			if (_map->getName(i) == "opengold" || _map->getName(i) == "opengoldright") {
+				opengold * h = dynamic_cast<opengold *>(_map->getBlock(i));
+				if (Keyboard::isKeyPressed(Keyboard::E))
+				{
+					if (h->isOpen(*_window, _keys.gold,getCoordX(),getCoorgY(), _map))
+					{
+						_map->reBlock(NullBlock, i);
+					}
+				}
+
 			}
 			if (_map->getName(i) == "sword") {
 				sword * h = dynamic_cast<sword *>(_map->getBlock(i));

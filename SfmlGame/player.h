@@ -5,6 +5,11 @@
 class player :
 	public character
 {
+	struct keys
+	{
+		bool silver = false;
+		bool gold = false;
+	};
 private:
 	sf::RenderWindow* _window;
 	float CurrentFrame = 0;
@@ -15,6 +20,8 @@ private:
 	int _damageCount = 9000;
 	bool _dethAnim = true;
 	bool _isEnd=false;
+
+	keys _keys;
 
 public:
 	player() = default;

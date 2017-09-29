@@ -68,6 +68,14 @@ public:
 		_posY = posy;
 
 	}
+	void setPositionSprite(int posx, int posy)
+	{
+		_posX = posx;
+		_posY = posy;
+		setRect();
+		_Sprite.setPosition(_posX, _posY);
+
+	}
 	void setImagePos(float posImageX, float posImageY, int  widthImage, int heightImage)
 	{
 		_imageX = posImageX; _imageY = posImageY;

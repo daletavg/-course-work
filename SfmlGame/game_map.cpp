@@ -1,5 +1,6 @@
 #include "game_map.h"
-
+#include"opensilver.h"
+#include"opengold.h"
 
 
 sf::FloatRect game_map::getSpawn() {
@@ -10,6 +11,22 @@ void game_map::setBlocks(sf::String name, sf::String image, vector<Object> objec
 		for (size_t i = 0; i < object.size(); i++)
 		{
 			grass* fr = new grass(name, image, object[i], ImageX, ImageY, width, height);
+			_Blocks.push_back(fr);
+
+		}
+	}
+	if (name == "lockdoor") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			lockdoor* fr = new lockdoor(name, image, object[i], ImageX, ImageY, width, height);
+			_Blocks.push_back(fr);
+
+		}
+	}
+	if (name == "silverkey"||name=="goldkey") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			key* fr = new key(name, image, object[i], ImageX, ImageY, width, height);
 			_Blocks.push_back(fr);
 
 		}
@@ -84,6 +101,38 @@ void game_map::setBlocks(sf::String name, vector<Object> object){
 
 		}
 	}
+	if (name == "opensilver") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			opensilver* fr = new opensilver(name, object[i]);
+			_Blocks.push_back(fr);
+
+		}
+	}
+	if (name == "opensilverright") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			opensilver* fr = new opensilver(name, object[i]);
+			_Blocks.push_back(fr);
+
+		}
+	}
+	if (name == "opengold") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			opengold* fr = new opengold(name, object[i]);
+			_Blocks.push_back(fr);
+
+		}
+	}
+	if (name == "opengoldright") {
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			opengold* fr = new opengold(name, object[i]);
+			_Blocks.push_back(fr);
+
+		}
+	}
 	if (name == "endblock") {
 		for (size_t i = 0; i < object.size(); i++)
 		{
@@ -116,15 +165,7 @@ void game_map::setBlocks(sf::String name, vector<Object> object){
 			_Blocks.push_back(fr);
 		}
 	}
-	else
-	{
-		for (size_t i = 0; i < object.size(); i++)
-		{
-			frame* fr=new frame(name, object[i]);
-			_Blocks.push_back(fr);
-			 
-		}
-	}
+	
 
 }
 
@@ -161,7 +202,13 @@ void game_map::initLevel()
 	setBlocks("nextlvl", lvl.GetObjects("nextlvl"));
 	setBlocks("coper", lvl.GetObjects("coper"));
 	setBlocks("endblock", lvl.GetObjects("endblock"));
-
+	setBlocks("lockdoor", "Tileset.png", lvl.GetObjects("lockdoor"), 1104, 48, 48, 48);
+	setBlocks("silverkey", "items.png", lvl.GetObjects("silverkey"), 51, 43, 21, 36);
+	setBlocks("goldkey", "items.png", lvl.GetObjects("goldkey"), 92, 43, 21, 36);
+	setBlocks("opensilver", lvl.GetObjects("opensilver"));
+	setBlocks("opensilverright", lvl.GetObjects("opensilverright"));
+	setBlocks("opengold", lvl.GetObjects("opengold"));
+	setBlocks("opengoldright", lvl.GetObjects("opengoldright"));
 
 	setBlocks("boxbot", lvl.GetObjects("boxbot"));
 	//setBots("foxBot", lvl.GetObjects("foxBot"));
