@@ -70,6 +70,7 @@
     <ClCompile Include="block.cpp" />
     <ClCompile Include="botFox.cpp" />
     <ClCompile Include="character.cpp" />
+    <ClCompile Include="damage.cpp" />
     <ClCompile Include="enamies.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="game_map.cpp" />
@@ -101,6 +102,7 @@
     <ClInclude Include="chess.h" />
     <ClInclude Include="coins.h" />
     <ClInclude Include="coper.h" />
+    <ClInclude Include="damage.h" />
     <ClInclude Include="door.h" />
     <ClInclude Include="enamies.h" />
     <ClInclude Include="endblock.h" />

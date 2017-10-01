@@ -9,6 +9,29 @@ void botFox::moveCharacter()
 	{
 		return;
 	}
+	float dd = _boxBot->getPlayerX();
+	float ff = getCoordX();
+	if ((_boxBot->getPlayerX()+2)>=getCoordX()&& (_boxBot->getPlayerX() - 2) <= getCoordX())
+	{
+		getSprite().setTextureRect(IntRect(getImageX()+ getWidth(), getImageY(), -getWidth(), getHeight()));
+	}
+	else if (_boxBot->getPlayerX()<getCoordX())
+	{
+		CurrentFrame += 0.009*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
+		setRotation(LEFT);
+		if (CurrentFrame > 3) CurrentFrame -= 3; // если пришли к третьему кадру - откидываемся назад.
+		getSprite().setTextureRect(IntRect(25 * int(CurrentFrame)+23, 53 , -23, 31)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
+		
+	}
+	else if (_boxBot->getPlayerX()>getCoordX())
+	{
+		CurrentFrame += 0.009*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
+		setRotation(RIGHT);
+		if (CurrentFrame > 3) CurrentFrame -= 3; // если пришли к третьему кадру - откидываемся назад.
+		getSprite().setTextureRect(IntRect(25 * int(CurrentFrame), 53, 23, 31)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
+
+	}
+	
 	_distance = sqrt((_boxBot->getPlayerX()-getCoordX())*( _boxBot->getPlayerX() - getCoordX()) + (_boxBot->getPlayerY() - getCoorgY())*( _boxBot->getPlayerY()- getCoorgY()));//считаем дистанцию (длину от точки А до точки Б). формула длины вектора
 
 	if (_distance > 2) {//этим условием убираем дергание во время конечной позиции спрайта

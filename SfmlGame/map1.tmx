@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="20" height="25" tilewidth="48" tileheight="48" nextobjectid="29">
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="20" height="25" tilewidth="48" tileheight="48" nextobjectid="31">
  <tileset firstgid="1" name="Tileset" tilewidth="48" tileheight="48" tilecount="385" columns="35">
   <image source="image/Tileset.png" width="1683" height="545"/>
  </tileset>
@@ -97,7 +97,7 @@
    <tile gid="37"/>
    <tile gid="37"/>
    <tile gid="37"/>
-   <tile gid="37"/>
+   <tile gid="113"/>
    <tile gid="37"/>
    <tile gid="37"/>
    <tile gid="39"/>
@@ -532,6 +532,8 @@
   <object id="25" name="boxbot" x="309" y="522" width="522" height="278"/>
   <object id="26" name="botFox" x="540" y="569" width="53" height="50"/>
   <object id="27" name="endblock" x="240" y="144" width="49" height="48"/>
+  <object id="29" name="coper" x="575.5" y="191.25" width="49" height="47.5"/>
+  <object id="30" name="coper" x="290.5" y="144.25" width="49" height="47.5"/>
  </objectgroup>
  <layer name="Tile Layer 2" width="20" height="25">
   <data>

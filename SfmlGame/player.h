@@ -1,6 +1,7 @@
 #pragma once
 #include "character.h"
 #include"enamies.h"
+#include"damage.h"
 
 class player :
 	public character
@@ -10,16 +11,19 @@ class player :
 		bool silver = false;
 		bool gold = false;
 	};
+	
 private:
 	sf::RenderWindow* _window;
 	float CurrentFrame = 0;
 	armors _armorType = leather;
 	int _armor = 0;
 	enamies* _bots;
-	bool _damage = true;
-	int _damageCount = 9000;
+
 	bool _dethAnim = true;
 	bool _isEnd=false;
+
+	damage _Damage;
+
 
 	keys _keys;
 

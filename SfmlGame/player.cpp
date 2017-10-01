@@ -27,12 +27,14 @@ void player::moveCharacter()
 		}
 		
 	}
+	
 
 		if (Keyboard::isKeyPressed(Keyboard::Left)|| Keyboard::isKeyPressed(Keyboard::A)) {
 			setRotation(LEFT);
 			setSpeed(0.1);
 			CurrentFrame += 0.009*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
-			
+			_Damage.setDamage();
+			_Damage.setRedSprite(getSprite());
 			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame)+30, 440+ _armorType, -30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
 			//updateAnimation(5, sf::IntRect rect)
@@ -46,7 +48,8 @@ void player::moveCharacter()
 			
 			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame), 440 + _armorType, 30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
-			getSprite().setColor(Color::White);
+			_Damage.setDamage();
+			_Damage.setRedSprite(getSprite());
 			setSpeed(0.1);
 			update();
 			return;
@@ -56,7 +59,8 @@ void player::moveCharacter()
 			setRotation(UP);
 			setSpeed(0.1);
 			CurrentFrame += 0.005*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
-			
+			_Damage.setDamage();
+			_Damage.setRedSprite(getSprite());
 			if (CurrentFrame > 2) CurrentFrame -= 2; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(38 * int(CurrentFrame), 693+ _armorType, 32, 42)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
 			update();
@@ -68,13 +72,16 @@ void player::moveCharacter()
 			setSpeed(0.1);
 
 			CurrentFrame += 0.009*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
-
+			_Damage.setDamage();
+			_Damage.setRedSprite(getSprite());
 			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame ) + 30, 440 + _armorType, -30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
 			update();
 			return;
 		
 		}
+		_Damage.setDamage();
+		_Damage.setRedSprite(getSprite());
 		getSprite().setTextureRect(IntRect(getImageX(), getImageY() + _armorType, getWidth(), getHeight()));
 		update();
 }
@@ -228,27 +235,12 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 				}
 			}
 			if (_map->getName(i) == "coper") {
-				if (!isDead())
+				if (_Damage.getDamage())
 				{
-					getSprite().setColor(Color::Red);
-				}
-				if (_damageCount>= 9000)
-				{
-					
-					_damageCount -= 9000;
-					
+					_Damage.setDamage(true);
 					coper* ch = dynamic_cast<coper*>(_map->getBlock(i));
 					addHealth(ch->getDamage());
 				}
-				else
-				{
-					_damageCount += (*_time);
-				}
-			}
-			else
-			{
-				_damageCount = 9000;
-				getSprite().setColor(Color::White);
 			}
 			if (_map->getName(i)=="doorright"|| _map->getName(i) == "door"){
 				door* dr= dynamic_cast<door*>(_map->getBlock(i));
