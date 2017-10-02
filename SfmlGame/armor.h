@@ -18,10 +18,10 @@ public:
 		setSprite();
 		setDraw(true);
 
-		_font.loadFromFile("fonts/arcade.ttf");
+		_font.loadFromFile("fonts/pixel.ttf");
 		_arm.setFont(_font);
 		_arm.setCharacterSize(20);
-		_arm.setString("armor is full");
+		_arm.setString("  ARMOR IS FULL");
 	}
 	armor(sf::String name, sf::String image, sf::FloatRect rect, float ImageX, float ImageY, float width, float height) {
 		setEntity(name, image, ImageX, ImageY, width, height, rect.left, rect.top);
@@ -29,10 +29,10 @@ public:
 		setSprite();
 		setDraw(true);
 		
-		_font.loadFromFile("fonts/arcade.ttf");
+		_font.loadFromFile("fonts/pixel.ttf");
 		_arm.setFont(_font);
 		_arm.setCharacterSize(20);
-		_arm.setString("armor is full");
+		_arm.setString("  ARMOR IS FULL");
 	}
 	armor(const armor& fr) {
 		_isDraw = fr._isDraw;

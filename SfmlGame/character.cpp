@@ -8,6 +8,20 @@ using namespace std;
 
 
 
+void character::setDamageRect(float x, float y, float width, float height)
+{
+	_damageRect.left = x;
+	_damageRect.top = y;
+	_damageRect.width = width;
+	_damageRect.height = height;
+}
+
+void character::updateDamageRect(float x, float y)
+{
+	_damageRect.left = x;
+	_damageRect.top = y;
+}
+
 void character::setRotation(DIR dir)
 {
 	_dir = dir;
@@ -35,7 +49,7 @@ void character::update() //функция "оживления" объекта класса. update - обновлен
 	addPosY(getDY()*(*_time));
 	collision(0, getDY());//обрабатываем столкновение по Y
 	
-
+	
 	_Speed = 0;
 	positionSprite(getCoordX(),getCoorgY()); //выводим спрайт в позицию x y , посередине. бесконечно выводим в этой функции, иначе бы наш спрайт стоял на месте.
 	

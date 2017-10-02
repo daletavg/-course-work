@@ -1,5 +1,6 @@
 #pragma once
 #include "menusettings.h"
+#include<SFML\Audio.hpp>
 
 class menu 
 {
@@ -27,10 +28,17 @@ private:
 
 	bool _isSettings=false;
 	int menuNum;
+
+	sf::Music _music;
+
+
 public:
 	menu();
-	void loadMenu();
 
+	void loadMenu();
+	void setMusic();
+	void loadSurface();
+	void loadText();
 	void Draw(RenderWindow& window);
 	void setRenderWindow(RenderWindow& window);
 	
@@ -40,6 +48,6 @@ public:
 	
 
 	int menuGame();
-	
+	sf::Music& getMusic();
 };
 

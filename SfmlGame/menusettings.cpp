@@ -12,14 +12,54 @@ void menusettings::setSpriteBorder(Sprite & _sprite)
 {
 	_imgSprite = &_sprite;
 }
+
 void menusettings::loadMenu()
 {
 
 
+	setFont();
+	setText();
 
-	_font.loadFromFile("fonts/arcade.ttf");//передаем нашему шрифту файл шрифта
+	
+}
+void menusettings::addPosition(float x, float y)
+{
+	_xVideo += x;
+	_yVideo += y;
+	_xSize += x;
+	_ySize += y;
+	_xLeft += x;
+	_xRight += x;
+	_yLeftRight += y;
+	_xMusic += x;
+	_xOnoff += x;
+	_yMusicOnOff += y;
+	_xBack += x;
+	_yBack += y;
+	_xLeftM += x;
+	_xRightM += x;
+	_yLeftRightM += y;
+	_videoSText.setPosition(_xVideo, _yVideo);
+	_sizeSText.setPosition(_xSize, _ySize);
+	_rightStext.setPosition(_xRight, _yLeftRight);
+	_leftSText.setPosition(_xLeft, _yLeftRight);
+	_musicSText.setPosition(_xMusic, _yMusicOnOff);
+	_onoffSText.setPosition(_xOnoff, _yLeftRightM);
+	_backSText.setPosition(_xBack, _yBack);
+	_righMtStext.setPosition(_xRightM, _yLeftRightM);
+	_leftMSText.setPosition(_xLeftM, _yLeftRightM);
+}
+void menusettings::setMusic(Music & music)
+{
+	_music = &music;
+}
+void menusettings::setFont()
+{
+	_font.loadFromFile("fonts/arcade.ttf");
 	_font2.loadFromFile("fonts/pixel.ttf");
-
+}
+void menusettings::setText()
+{
 	_videoSText.setFont(_font);
 	_videoSText.setCharacterSize(50);
 	_videoSText.setString("Display");
@@ -67,33 +107,6 @@ void menusettings::loadMenu()
 	_backSText.setPosition(_xBack, _yBack);
 	addPosition(0, 60);
 }
-void menusettings::addPosition(float x, float y)
-{
-	_xVideo += x;
-	_yVideo += y;
-	_xSize += x;
-	_ySize += y;
-	_xLeft += x;
-	_xRight += x;
-	_yLeftRight += y;
-	_xMusic += x;
-	_xOnoff += x;
-	_yMusicOnOff += y;
-	_xBack += x;
-	_yBack += y;
-	_xLeftM += x;
-	_xRightM += x;
-	_yLeftRightM += y;
-	_videoSText.setPosition(_xVideo, _yVideo);
-	_sizeSText.setPosition(_xSize, _ySize);
-	_rightStext.setPosition(_xRight, _yLeftRight);
-	_leftSText.setPosition(_xLeft, _yLeftRight);
-	_musicSText.setPosition(_xMusic, _yMusicOnOff);
-	_onoffSText.setPosition(_xOnoff, _yLeftRightM);
-	_backSText.setPosition(_xBack, _yBack);
-	_righMtStext.setPosition(_xRightM, _yLeftRightM);
-	_leftMSText.setPosition(_xLeftM, _yLeftRightM);
-}
 void menusettings::Draw(RenderWindow & window)
 {
 	window.draw(*_imgSprite);
@@ -128,11 +141,6 @@ int menusettings::menuGame()
 		menuNum = 0;
 		_window->clear();
 
-		//if (IntRect(305, 120, 210, 30).contains(Mouse::getPosition(window)))
-		//{
-		//	_newGText.setColor(Color::Blue); menuNum = 1;
-		//}
-		//else { _newGText.setColor(Color::White); }
 
 		if (_sizeSText.getString() == "800x600") {
 			if (IntRect(_xLeft, _yLeftRight + 20, 15, 30).contains(Mouse::getPosition(*_window)))
@@ -231,12 +239,14 @@ int menusettings::menuGame()
 				if (_onoffSText.getString() == "on")
 				{
 					_onoffSText.setString("off");
+					_music->stop();
 				}
 			}
 			if (menuNum == 4) {
 				if (_onoffSText.getString() == "off")
 				{
 					_onoffSText.setString("on");
+					_music->play();
 				}
 			}
 			if (menuNum == 5) { return menuNum; }

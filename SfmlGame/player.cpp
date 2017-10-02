@@ -10,19 +10,22 @@ void player::moveCharacter()
 		update();
 		return;
 	}
+	_Damage = false;
 	if (getDamage()==25)
 	{
 		if (Keyboard::isKeyPressed(Keyboard::LControl))
 		{
 			for (size_t i = 0; i <2; i++)
 			{
-				CurrentFrame += 0.003*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
+				CurrentFrame += 0.003*(*_time); 
 
-				if (CurrentFrame > 2) CurrentFrame -= 2; // если пришли к третьему кадру - откидываемся назад.
-				getSprite().setTextureRect(IntRect(40 * int(CurrentFrame), 879 + _armorType, 40, 47)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
+				if (CurrentFrame > 2) CurrentFrame -= 2; 
+				getSprite().setTextureRect(IntRect(40 * int(CurrentFrame), 879 + _armorType, 40, 47)); 
+				_Damage = true;
 				update();
 				Draw(*_window);
 			}
+		
 			return;
 		}
 		
@@ -32,24 +35,23 @@ void player::moveCharacter()
 		if (Keyboard::isKeyPressed(Keyboard::Left)|| Keyboard::isKeyPressed(Keyboard::A)) {
 			setRotation(LEFT);
 			setSpeed(0.1);
-			CurrentFrame += 0.009*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
-			_Damage.setDamage();
-			_Damage.setRedSprite(getSprite());
-			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
-			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame)+30, 440+ _armorType, -30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
-			//updateAnimation(5, sf::IntRect rect)
+			CurrentFrame += 0.009*(*_time); 
+			_DamageBlock.setDamage();
+			_DamageBlock.setRedSprite(getSprite());
+			if (CurrentFrame > 5) CurrentFrame -= 5; 
+			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame)+30, 440+ _armorType, -30, 43));
 			update();
 			return;
 		}
 
 		else if (Keyboard::isKeyPressed(Keyboard::Right)|| Keyboard::isKeyPressed(Keyboard::D)) {
 			setRotation(RIGHT);
-			CurrentFrame += 0.009*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
+			CurrentFrame += 0.009*(*_time); 
 			
-			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
-			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame), 440 + _armorType, 30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
-			_Damage.setDamage();
-			_Damage.setRedSprite(getSprite());
+			if (CurrentFrame > 5) CurrentFrame -= 5; 
+			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame), 440 + _armorType, 30, 43)); 
+			_DamageBlock.setDamage();
+			_DamageBlock.setRedSprite(getSprite());
 			setSpeed(0.1);
 			update();
 			return;
@@ -58,11 +60,11 @@ void player::moveCharacter()
 		else if (Keyboard::isKeyPressed(Keyboard::Up) || Keyboard::isKeyPressed(Keyboard::W)) {
 			setRotation(UP);
 			setSpeed(0.1);
-			CurrentFrame += 0.005*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
-			_Damage.setDamage();
-			_Damage.setRedSprite(getSprite());
-			if (CurrentFrame > 2) CurrentFrame -= 2; // если пришли к третьему кадру - откидываемся назад.
-			getSprite().setTextureRect(IntRect(38 * int(CurrentFrame), 693+ _armorType, 32, 42)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
+			CurrentFrame += 0.005*(*_time); 
+			_DamageBlock.setDamage();
+			_DamageBlock.setRedSprite(getSprite());
+			if (CurrentFrame > 2) CurrentFrame -= 2; 
+			getSprite().setTextureRect(IntRect(38 * int(CurrentFrame), 693+ _armorType, 32, 42)); 
 			update();
 			return;
 		}
@@ -71,17 +73,17 @@ void player::moveCharacter()
 			setRotation(DOWN);
 			setSpeed(0.1);
 
-			CurrentFrame += 0.009*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
-			_Damage.setDamage();
-			_Damage.setRedSprite(getSprite());
-			if (CurrentFrame > 5) CurrentFrame -= 5; // если пришли к третьему кадру - откидываемся назад.
-			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame ) + 30, 440 + _armorType, -30, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
+			CurrentFrame += 0.009*(*_time);
+			_DamageBlock.setDamage();
+			_DamageBlock.setRedSprite(getSprite());
+			if (CurrentFrame > 5) CurrentFrame -= 5; 
+			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame ) + 30, 440 + _armorType, -30, 43)); 
 			update();
 			return;
 		
 		}
-		_Damage.setDamage();
-		_Damage.setRedSprite(getSprite());
+		_DamageBlock.setDamage();
+		_DamageBlock.setRedSprite(getSprite());
 		getSprite().setTextureRect(IntRect(getImageX(), getImageY() + _armorType, getWidth(), getHeight()));
 		update();
 }
@@ -93,12 +95,12 @@ void player::update()
 		if (_dethAnim)
 		{
 				getSprite().setColor(Color::White);
-				CurrentFrame += 0.005*(*_time); //служит для прохождения по "кадрам". переменная доходит до трех суммируя произведение времени и скорости. изменив 0.005 можно изменить скорость анимации
+				CurrentFrame += 0.005*(*_time);
 				if (CurrentFrame > 5) { 
 					_dethAnim = false;
 					CurrentFrame -= 5; 
 				} 
-				getSprite().setTextureRect(IntRect(36 * int(CurrentFrame), 823 , 25, 43)); //проходимся по координатам Х. получается начинаем рисование с координаты Х равной 0,96,96*2, и опять 0
+				getSprite().setTextureRect(IntRect(36 * int(CurrentFrame), 823 , 25, 43)); 
 				if (!_dethAnim)
 				{
 					getSprite().setTextureRect(IntRect(146, 822, 25, 43));
@@ -109,6 +111,7 @@ void player::update()
 	else
 	{
 		character::update();
+		updateDamageRect(getCoordX() - 2, getCoorgY() - 2);
 	}
 }
 
@@ -116,24 +119,41 @@ void player::addWindow(sf::RenderWindow & window)
 {
 	_window = &window;
 }
-
-
-
-void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
+frame* player::getInventary()
 {
+	return _block;
+}
 
-	for (int i = 0; i < _map->getBlock().size(); i++)//проходимся по объектам
+
+void player::collision(float Dx, float Dy)
+{
+	for (size_t j = 0; j < _bots->getBots().size(); j++)
+	{
+		sf::FloatRect rect = getDamageRect();
+		sf::FloatRect rect2 = _bots->getDamageRect(j);
+		if (rect.intersects(rect2))
+		{
+			
+			if (_Damage)
+			{
+				_Damage = false;
+				_bots->getBot(j)->addHealth(-getDamage());
+			}
+		}
+	}
+
+	for (int i = 0; i < _map->getBlock().size(); i++)
 	{
 		sf::FloatRect rect = getCharacterRect();
 		sf::FloatRect rect2 = _map->getBlockRect(i);
 
 
 
-		if (rect.intersects(rect2))//проверяем пересечение игрока с объектом
+		if (rect.intersects(rect2))
 		{
 
 
-			if (_map->getName(i) == "solid"|| _map->getName(i) == "lockdoor")//если встретили препятствие
+			if (_map->getName(i) == "solid"|| _map->getName(i) == "lockdoor")
 			{
 				if (Dy > 0) { setPosY(_map->getBlockRect(i).top - (_height)) ;  _dy = 0; }
 				if (Dy < 0) {setPosY(_map->getBlockRect(i).top + _map->getBlockRect(i).height); }
@@ -160,12 +180,22 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 				
 			}
 			if (_map->getName(i) == "bottleHealth") {
-				frame* f = _map->getBlock(i);
+				
 				bottleHealth* ch = dynamic_cast<bottleHealth*>(_map->getBlock(i));
+				ch->Draw(*_window, getCoordX(), getCoorgY());
 				if (Keyboard::isKeyPressed(Keyboard::E))
 				{
 					addHealth(ch->getBuff());
 					_map->reBlock(NullBlock, i);
+				}
+				if (_inventaryCount <4)
+				{
+					if (Keyboard::isKeyPressed(Keyboard::F))
+					{
+						_block = ch;
+						_map->reBlock(NullBlock, i);
+
+					}
 				}
 				
 			}
@@ -187,6 +217,15 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 					{
 						addArmor(h->getArmor());
 						setArmorType(h->getArmorType());
+						_map->reBlock(NullBlock, i);
+
+					}
+				}
+				if (_inventaryCount >= !4)
+				{
+					if (Keyboard::isKeyPressed(Keyboard::F))
+					{
+						_block = h;
 						_map->reBlock(NullBlock, i);
 
 					}
@@ -235,9 +274,9 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 				}
 			}
 			if (_map->getName(i) == "coper") {
-				if (_Damage.getDamage())
+				if (_DamageBlock.getDamage())
 				{
-					_Damage.setDamage(true);
+					_DamageBlock.setDamage(true);
 					coper* ch = dynamic_cast<coper*>(_map->getBlock(i));
 					addHealth(ch->getDamage());
 				}
@@ -282,6 +321,9 @@ void player::collision(float Dx, float Dy)//ф ция проверки столкновений с картой
 
 		}
 	}
+
+	
+
 }
 
 

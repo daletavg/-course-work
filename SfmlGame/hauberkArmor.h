@@ -25,6 +25,7 @@ public:
 			window.draw(_arm);
 			return false;
 		}
+
 		return true;
 	}
 };

@@ -1,8 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include<SFML\Audio.hpp>
 using namespace sf;
 #include <iostream>
 using namespace std;
+
+
 class menusettings
 {
 private:
@@ -11,6 +14,7 @@ private:
 
 	Sprite* _imgSprite;
 
+	Music* _music;
 
 	Font _font;
 	Font _font2;
@@ -40,7 +44,9 @@ public:
 	void setSpriteBorder(Sprite& _sprite);
 	void loadMenu();
 	void addPosition(float x, float y);
-	
+	void setMusic(Music& music);
+	void setFont();
+	void setText();
 	void Draw(RenderWindow& window);
 	void setRenderWindow(RenderWindow& window);
 	

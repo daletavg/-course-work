@@ -22,6 +22,18 @@ public:
 		_bots.clear();
 		initBots();
 	}
+	vector<character*>& getBots()
+	{
+		return _bots;
+	}
+	character* getBot(int index)
+	{
+		return _bots[index];
+	}
+	sf::FloatRect getDamageRect(int index)
+	{
+		return _bots[index]->getDamageRect();
+	}
 	void initBots() {
 		
 		vector<Object> tmp = _gameMap->getBlock("botFox");

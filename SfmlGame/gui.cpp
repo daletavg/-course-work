@@ -7,8 +7,27 @@
 
 gui::gui()
 {
-	_font.loadFromFile("fonts/arcade.ttf");//передаем нашему шрифту файл шрифта
+	
+	setText();
+	setImage();
+	//for (size_t i = 0; i < 4; i++)
+	//{
+	//	bottleHealth* bl = new bottleHealth("bottleHealth", "items.png", sf::FloatRect(0,0, 25, 36), 49, 289, 25, 36);
+	//	_inventary.pushOnInventary(bl);
+	//}
+	
+
+}
+
+void gui::setFont()
+{
+	_font.loadFromFile("fonts/arcade.ttf");
 	_font2.loadFromFile("fonts/pixel.ttf");
+}
+
+void gui::setText()
+{
+	setFont();
 	_score.setFont(_font);
 	_score.setCharacterSize(20);
 	_hp.setFont(_font);
@@ -25,6 +44,18 @@ gui::gui()
 	_timeText.setCharacterSize(60);
 
 
+	_backText.setFont(_font);
+	_backText.setCharacterSize(50);
+	_backText.setString("Back");
+	///////////////////////////////////////////////
+
+	_exitText.setFont(_font);
+	_exitText.setCharacterSize(50);
+	_exitText.setString("Exit");
+}
+
+void gui::setImage()
+{
 	_select.setEntity("sеlect", "select.png", 0, 0, 800, 600, 0, 0);
 	_select.setSprite();
 	///////////////////////////////////////////////
@@ -43,25 +74,17 @@ gui::gui()
 	_blackSprite.setTexture(_blackText);
 	///////////////////////////////////////////////
 	_over.loadFromFile("image//gameover.png");
-	 _overText.loadFromImage(_over);
+	_overText.loadFromImage(_over);
 	_overSprite.setTexture(_overText);
 	///////////////////////////////////////////////
 
 
-	_backText.setFont(_font);
-	_backText.setCharacterSize(50);
-	_backText.setString("Back");
 	///////////////////////////////////////////////
-
-	_exitText.setFont(_font);
-	_exitText.setCharacterSize(50);
-	_exitText.setString("Exit");
-	///////////////////////////////////////////////
-
 }
 
 void gui::setPlayerGui(player * pl)
 {
+	_inventary.setPlayer(pl);
 	_player = pl;
 	_score.setString(pl->getScore() + "s");
 	_hp.setString(pl->getHp() + " hp");
@@ -75,6 +98,7 @@ void gui::window(bool isbiger)
 void gui::setRenderWindow(sf::RenderWindow & window)
 {
 	_window = &window;
+	_inventary.setWindow(window);
 }
 
 void gui::menu(sf::RenderWindow & window)
@@ -96,6 +120,7 @@ void gui::menu(sf::RenderWindow & window)
 			{
 				if (_menuNum == 3)
 				{
+					_inventary.delInventory();
 					_gameTimeClock.restart();
 					_hGT = 0;
 					_mGT = 0;
@@ -134,7 +159,10 @@ void gui::menu(sf::RenderWindow & window)
 		window.draw(_retryText);
 
 	}
-
+	else
+	{
+		_inventary.checkAct();
+	}
 	if (!_isBiger) {
 		if (sf::IntRect(751, 9, 42, 37).contains(sf::Mouse::getPosition(window)))
 		{
@@ -302,6 +330,7 @@ void gui::Draw(sf::RenderWindow & window)
 		window.draw(_endSprite);
 		return;
 	}
+	_inventary.updateInventary();
 	char tmp[20];
 	sprintf_s(tmp, "%i", _player->getScore());
 	_score.setString(tmp);
@@ -327,6 +356,7 @@ void gui::Draw(sf::RenderWindow & window)
 	window.draw(_hp);
 	window.draw(_score);
 	window.draw(_armor);
+	_inventary.Draw(_player->getCoordX()-157, _player->getCoorgY()+240);
 }
 void gui::drawBlack(sf::RenderWindow & window)
 {

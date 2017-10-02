@@ -8,15 +8,24 @@ menu::menu()
 {
 	loadMenu();
 }
-void menu::loadMenu()
+void menu::setMusic()
 {
+	_music.openFromFile("music//game.ogg");
+	_music.setLoop(true);
+	_music.play();
+}
+void menu::loadSurface()
+{
+
 	_img.loadFromFile("image//surface.png");
 	_imgText.loadFromImage(_img);
 	_imgSprite.setTexture(_imgText);
 	_imgSprite.setPosition(230, 25);
 	_imgSprite.scale(4, 4);
+}
 
-
+void menu::loadText()
+{
 	_font.loadFromFile("fonts/arcade.ttf");
 
 	_newGText.setFont(_font);
@@ -37,8 +46,18 @@ void menu::loadMenu()
 	_settings.setSpriteBorder(_imgSprite);
 	addPosition(0, 70);
 }
+
+void menu::loadMenu()
+{
+	setMusic();
+	loadSurface();
+	loadText();
+
+	
+}
 void menu::Draw(RenderWindow & window)
 {
+	
 	window.draw(_imgSprite);
 	window.draw(_settingsGText);
 	window.draw(_newGText);
@@ -49,6 +68,7 @@ void menu::setRenderWindow(RenderWindow & window)
 	_window = &window;
 	_settings.setRenderWindow(window);
 }
+
 bool menu::isBigerWindow()
 {
 	return _settings.isBiger();
@@ -128,16 +148,21 @@ int menu::menuGame()
 
 		_window->display();
 	}
-
 	_window->clear();
 	if (_isSettings)
 	{
 		_isSettings = false;
+		_settings.setMusic(getMusic());
 		_settings.menuGame();
 		menuGame();
 
 		return menuNum;
 	}
 	return 0;
+}
+
+sf::Music & menu::getMusic()
+{
+	return _music;
 }
 

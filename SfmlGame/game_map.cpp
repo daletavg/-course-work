@@ -23,6 +23,15 @@ void game_map::setBlocks(sf::String name, sf::String image, vector<Object> objec
 
 		}
 	}
+	if (name=="sword")
+	{
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			sword* fr = new sword(name, image, object[i], ImageX, ImageY, width, height);
+			_Blocks.push_back(fr);
+
+		}
+	}
 	if (name == "silverkey"||name=="goldkey") {
 		for (size_t i = 0; i < object.size(); i++)
 		{
@@ -64,6 +73,15 @@ void game_map::setBlocks(sf::String name, sf::String image, vector<Object> objec
 		for (size_t i = 0; i < object.size(); i++)
 		{
 			bottleHealth* fr = new bottleHealth(name, image, object[i], ImageX, ImageY, width, height);
+			_Blocks.push_back(fr);
+
+		}
+	}
+	if (name == "hauberkArmor")
+	{
+		for (size_t i = 0; i < object.size(); i++)
+		{
+			hauberkArmor* fr = new hauberkArmor(name, image, object[i], ImageX, ImageY, width, height);
 			_Blocks.push_back(fr);
 
 		}
@@ -209,11 +227,15 @@ void game_map::initLevel()
 	setBlocks("opensilverright", lvl.GetObjects("opensilverright"));
 	setBlocks("opengold", lvl.GetObjects("opengold"));
 	setBlocks("opengoldright", lvl.GetObjects("opengoldright"));
+	setBlocks("sword", "items.png", lvl.GetObjects("sword"), 84, 5, 34, 33);
+	setBlocks("bottleHealth", "items.png", lvl.GetObjects("bottle"), 49, 289, 25, 36);
+	setBlocks("coins", "items.png", lvl.GetObjects("coins"), 248, 43, 38, 36);
+	setBlocks("hauberkArmor", "items.png", lvl.GetObjects("hauberkArmor"), 84, 128, 36, 31);
 
 	setBlocks("boxbot", lvl.GetObjects("boxbot"));
 	//setBots("foxBot", lvl.GetObjects("foxBot"));
 
-	//setBlocks("bottleHealth", "items.png", lvl.GetObjects("bottle"), 49, 289, 25, 36);
+	//
 	//bottleHealth* fr = new bottleHealth("bottleHealth", "items.png", sf::FloatRect(0,0,0,0), 49, 289, 25, 36);
 	//_Blocks.push_back(fr);
 

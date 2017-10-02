@@ -41,7 +41,8 @@ public:
 		}*/
 		//hauberkArmor* f = new hauberkArmor("hauberkArmor", "items.png", sf::FloatRect(_posX, _posY, 36, 31), 84, 128, 36, 31);
 		//sword* f = new sword("sword", "items.png", sf::FloatRect(_posX, _posY, 36, 31), 84, 5, 34, 33);
-		coins* f = new coins("coins", "items.png", sf::FloatRect(_posX, _posY, 38, 36), 248, 43, 38, 36);
+		//coins* f = new coins("coins", "items.png", sf::FloatRect(_posX, _posY, 38, 36), 248, 43, 38, 36);
+		bottleHealth* f = new bottleHealth("bottleHealth", "items.png", sf::FloatRect(_posX, _posY, 25, 36), 49, 289, 25, 36);
 
 		return f;
 	}

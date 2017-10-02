@@ -61,11 +61,11 @@ void game::updateGame()
 
 
 		window.clear();
-
+		
 		updateItem();///game character, map update
 		
 		_gameMap.drawAbovePlayer(window);
-		_bots.Draw(window);
+		
 		_gui.drawBlack(window);
 		if (!_gui.isWorkMenu()&& !_player.isEnd())
 		{
@@ -83,6 +83,7 @@ void game::updateItem()
 {
 
 	_gameMap.Draw(window);
+	_bots.Draw(window);
 	_player.Draw(window);
 
 }

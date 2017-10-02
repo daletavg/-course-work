@@ -2,6 +2,7 @@
 #include<time.h>
 #include"view.h"
 #include "player.h"
+#include "inventary.h"
 #include"game_map.h"
 #include"enamies.h"
 
@@ -59,8 +60,16 @@ private:
 	bool _isBiger;
 	int _menuNum = 0;
 
+	inventary _inventary;
+
+
+
 public:
 	gui();
+
+	void setFont();
+	void setText();
+	void setImage();
 	void setPlayerGui(player* pl);
 	void window(bool isbiger);
 	

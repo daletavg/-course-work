@@ -10,7 +10,7 @@ enum DIR {
 class character:public entity
 {
 private:
-	
+	sf::FloatRect _damageRect;
 	
 	float _scaleW = 0, _scaleH=0;
 
@@ -35,6 +35,13 @@ public:
 	character(sf::String name,sf::String image, float posImageCharacterX, float posImageCharacterY, float widthImageCharacter, float heightImageCharacter, float posx, float posy)
 		:entity(name,image, posImageCharacterX, posImageCharacterY, widthImageCharacter, heightImageCharacter, posx, posy) {}
 	
+	void setDamageRect(float x, float y, float width, float height);
+	void updateDamageRect(float x, float y);
+	sf::FloatRect getDamageRect()
+	{
+		return _damageRect;
+	}
+
 	virtual void addScale(float W, float H)
 	{
 		_scaleW = _width*W;
@@ -43,6 +50,10 @@ public:
 	void setDamage(int damage)
 	{
 		_Damage = damage;
+	}
+	void setHP(int hp)
+	{
+		_HP = hp;
 	}
 	int getDamage()
 	{
@@ -83,21 +94,22 @@ public:
 	}
 
 	virtual void moveCharacter() = 0;
-	void addHealth(int hp)
+	bool addHealth(int hp)
 	{
 		if (_HP+hp<=0)
 		{
 			_HP = 0;
 			_isDead = true;
-			return;
+			return false;
 		}
 		if (_HP + hp >= 130)
 		{
 			_HP = 130;
-			return;
+			return true;
 
 		}
 		_HP += hp;
+		return true;
 	}
 	
 	int getHp() {

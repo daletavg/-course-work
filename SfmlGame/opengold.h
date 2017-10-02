@@ -38,11 +38,11 @@ public:
 			window.draw(_text);
 			return false;
 		}
-		for (int i = 0; i < gm->getBlock().size(); i++)//проходимся по объектам
+		for (int i = 0; i < gm->getBlock().size(); i++)
 		{
 			sf::FloatRect rect = getRectPos();
 			sf::FloatRect rect2 = gm->getBlockRect(i);
-			if (rect.intersects(rect2))//проверяем пересечение игрока с объектом
+			if (rect.intersects(rect2))
 			{
 				if (getName() == "opengoldright")
 				{
