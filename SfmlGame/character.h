@@ -47,14 +47,15 @@ public:
 		_scaleW = _width*W;
 		_scaleH = _height*H;
 	}
-	void setDamage(int damage)
-	{
-		_Damage = damage;
-	}
 	void setHP(int hp)
 	{
 		_HP = hp;
 	}
+	void setDamage(int damage)
+	{
+		_Damage = damage;
+	}
+	
 	int getDamage()
 	{
 		return _Damage;

@@ -61,7 +61,7 @@ public:
 		_dethAnim = true;
 		_armorType = leather;
 		setDefault();
-		addHealth(100);
+		setHP(100);
 		_bots->loadNextLevel();
 	}
 	void setEnamies(enamies* en) {

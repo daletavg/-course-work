@@ -49,7 +49,17 @@ public:
 	void setText();
 	void Draw(RenderWindow& window);
 	void setRenderWindow(RenderWindow& window);
-	
+	bool getOnOff()
+	{
+		if (_onoffSText.getString() == "on")
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 
 	int menuGame();
 	bool isBiger();

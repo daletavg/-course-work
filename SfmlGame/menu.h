@@ -43,7 +43,10 @@ public:
 	void setRenderWindow(RenderWindow& window);
 	
 	bool isBigerWindow();
-	
+	bool getOnOff()
+	{
+		return _settings.getOnOff();
+	}
 	void addPosition(float x, float y);
 	
 

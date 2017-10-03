@@ -27,7 +27,25 @@ void gui::setFont()
 
 void gui::setText()
 {
+
+
 	setFont();
+
+	_musicSText.setFont(_font);
+	_musicSText.setCharacterSize(50);
+	
+	_leftMSText.setFont(_font2);
+	_leftMSText.setCharacterSize(50);
+	_leftMSText.setString("<");
+
+	_righMtStext.setFont(_font2);
+	_righMtStext.setCharacterSize(50);
+	_righMtStext.setString(">");
+	////////////////////////////////////////////
+
+	_retryTextGui.setFont(_font);
+	_retryTextGui.setString("RETRY");
+	_retryTextGui.setCharacterSize(50);
 	_score.setFont(_font);
 	_score.setCharacterSize(20);
 	_hp.setFont(_font);
@@ -114,11 +132,11 @@ void gui::menu(sf::RenderWindow & window)
 		
 			if (sf::IntRect(340,490, 130, 37).contains(sf::Mouse::getPosition(window)))
 			{
-					_retryText.setColor(sf::Color::Blue); _menuNum = 3;
+					_retryText.setColor(sf::Color::Blue); _menuNum = 9;
 			}
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				if (_menuNum == 3)
+				if (_menuNum == 9)
 				{
 					_inventary.delInventory();
 					_gameTimeClock.restart();
@@ -136,11 +154,11 @@ void gui::menu(sf::RenderWindow & window)
 
 			if (sf::IntRect(390, 580, 130, 37).contains(sf::Mouse::getPosition(window)))
 			{
-				_retryText.setColor(sf::Color::Blue); _menuNum = 3;
+				_retryText.setColor(sf::Color::Blue); _menuNum = 9;
 			}
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				if (_menuNum == 3)
+				if (_menuNum == 9)
 				{
 					_gameTimeClock.restart();
 					_hGT = 0;
@@ -183,15 +201,46 @@ void gui::menu(sf::RenderWindow & window)
 				_backText.setColor(sf::Color::White);
 				_menuNum = 0;
 			}
-			if (sf::IntRect(350, 170, 110, 30).contains(sf::Mouse::getPosition(window)))
+			///////////////////////////////////////////////
+			if (sf::IntRect(330, 170, 130, 30).contains(sf::Mouse::getPosition(window)))
 			{
-				_exitText.setColor(sf::Color::Blue); _menuNum = 2;
+				_retryTextGui.setColor(sf::Color::Blue); _menuNum = 2;
+
+			}
+			else {
+				_retryTextGui.setColor(sf::Color::White);
+
+			}
+			///////////////////////////////////////////////
+			if (sf::IntRect(275, 220, 20, 30).contains(sf::Mouse::getPosition(window)))
+			{
+				_leftMSText.setColor(sf::Color::Blue); _menuNum = 4;
+
+			}
+			else {
+				_leftMSText.setColor(sf::Color::White);
+
+			}
+			if (sf::IntRect(535, 220, 20, 30).contains(sf::Mouse::getPosition(window)))
+			{
+				_righMtStext.setColor(sf::Color::Blue); _menuNum = 5;
+
+			}
+			else {
+				_righMtStext.setColor(sf::Color::White);
+
+			}
+			///////////////////////////////////////////////
+			if (sf::IntRect(350, 250, 110, 30).contains(sf::Mouse::getPosition(window)))
+			{
+				_exitText.setColor(sf::Color::Blue); _menuNum = 3;
 
 			}
 			else {
 				_exitText.setColor(sf::Color::White);
 
 			}
+			///////////////////////////////////////////////
 
 
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -203,21 +252,58 @@ void gui::menu(sf::RenderWindow & window)
 				}
 				if (_menuNum == 2)
 				{
+					_inventary.delInventory();
+					_gameTimeClock.restart();
+					_hGT = 0;
+					_mGT = 0;
+					_sGT = 0;
+					_player->reloadGame();
+					_menuNum = 0;
+					_player->setIsEnd(false);
+				}
+				if (_menuNum == 3)
+				{
 					_checkMenu = false;
 					_menuNum = 0;
 					_window->close();
 				}
+				if (_menuNum == 5)
+				{
+					if (_musicSText.getString() == "music oof")
+					{
+						_music->play();
+						_musicSText.setString("music on");
+					}
+				}
+				if (_menuNum == 4)
+				{
+					if (_musicSText.getString()=="music on")
+					{
+						_music->stop();
+						_musicSText.setString("music oof");
+					}
+				}
+				
+
 			}
 
-			_imgSprite.setPosition((_view.getVeiw().x - 400) + 230, (_view.getVeiw().y - 300) + 25);
-			_backText.setPosition((_view.getVeiw().x - 400) + 350, (_view.getVeiw().y - 300) + 100);
-			_exitText.setPosition((_view.getVeiw().x - 400) + 350, (_view.getVeiw().y - 300) + 150);
+ 			_imgSprite.setPosition((_view.getVeiw().x - 400) + 230, (_view.getVeiw().y - 300) + 25);
+			_backText.setPosition((_view.getVeiw().x - 400) + 345, (_view.getVeiw().y - 300) + 100);
+			_retryTextGui.setPosition((_view.getVeiw().x - 400) + 335, (_view.getVeiw().y - 300) + 145);
+			/////////////////////////
+			_musicSText.setPosition((_view.getVeiw().x - 400) + 305, (_view.getVeiw().y - 300) + 190);
+			_leftMSText.setPosition((_view.getVeiw().x - 400) + 280, (_view.getVeiw().y - 300) + 190);
+			_righMtStext.setPosition((_view.getVeiw().x - 400) + 540, (_view.getVeiw().y - 300) + 190);
+			/////////////////////////
+			_exitText.setPosition((_view.getVeiw().x - 400) + 350, (_view.getVeiw().y - 300) + 235);
 
 			window.draw(_imgSprite);
 			window.draw(_backText);
 			window.draw(_exitText);
-
-
+			window.draw(_retryTextGui);
+			window.draw(_musicSText);
+			window.draw(_righMtStext);
+			window.draw(_leftMSText);
 		}
 	}
 	if (_isBiger) {
@@ -230,7 +316,7 @@ void gui::menu(sf::RenderWindow & window)
 		}
 		if (_checkMenu)
 		{
-
+			//////////////////////////////////
 			if (sf::IntRect(380, 140, 120, 30).contains(sf::Mouse::getPosition(window)))
 			{
 				_backText.setColor(sf::Color::Blue); _menuNum = 1;
@@ -240,9 +326,40 @@ void gui::menu(sf::RenderWindow & window)
 				_backText.setColor(sf::Color::White);
 				_menuNum = 0;
 			}
-			if (sf::IntRect(380, 190, 110, 30).contains(sf::Mouse::getPosition(window)))
+			//////////////////////////////////
+			if (sf::IntRect(380, 190, 130, 30).contains(sf::Mouse::getPosition(window)))
 			{
-				_exitText.setColor(sf::Color::Blue); _menuNum = 2;
+				_retryTextGui.setColor(sf::Color::Blue); _menuNum = 2;
+
+			}
+			else {
+				_retryTextGui.setColor(sf::Color::White);
+
+			}
+			///////////////////////////////////////////////
+			if (sf::IntRect(325, 240, 20, 30).contains(sf::Mouse::getPosition(window)))
+			{
+				_leftMSText.setColor(sf::Color::Blue); _menuNum = 4;
+
+			}
+			else {
+				_leftMSText.setColor(sf::Color::White);
+
+			}
+			if (sf::IntRect(610, 240, 20, 30).contains(sf::Mouse::getPosition(window)))
+			{
+				_righMtStext.setColor(sf::Color::Blue); _menuNum = 5;
+
+			}
+			else {
+				_righMtStext.setColor(sf::Color::White);
+
+			}
+			///////////////////////////////////////////////
+			///////////////////////////////////
+			if (sf::IntRect(380, 290, 110, 30).contains(sf::Mouse::getPosition(window)))
+			{
+				_exitText.setColor(sf::Color::Blue); _menuNum = 3;
 
 			}
 			else {
@@ -259,20 +376,56 @@ void gui::menu(sf::RenderWindow & window)
 				}
 				if (_menuNum == 2)
 				{
+					_inventary.delInventory();
+					_gameTimeClock.restart();
+					_hGT = 0;
+					_mGT = 0;
+					_sGT = 0;
+					_player->reloadGame();
+					_menuNum = 0;
+					_player->setIsEnd(false);
+				}
+				if (_menuNum == 3)
+				{
 					_checkMenu = false;
 					_menuNum = 0;
 					_window->close();
+				}
+				if (_menuNum == 5)
+				{
+					if (_musicSText.getString() == "music oof")
+					{
+						_music->play();
+						_musicSText.setString("music on");
+					}
+				}
+				if (_menuNum == 4)
+				{
+					if (_musicSText.getString() == "music on")
+					{
+						_music->stop();
+						_musicSText.setString("music oof");
+					}
 				}
 			}
 
 			_imgSprite.setPosition((_view.getVeiw().x - 400) + 230, (_view.getVeiw().y - 300) + 25);
 			_backText.setPosition((_view.getVeiw().x - 400) + 350, (_view.getVeiw().y - 300) + 100);
-			_exitText.setPosition((_view.getVeiw().x - 400) + 350, (_view.getVeiw().y - 300) + 150);
+			/////////////////////////
+			_musicSText.setPosition((_view.getVeiw().x - 400) + 305, (_view.getVeiw().y - 300) + 190);
+			_leftMSText.setPosition((_view.getVeiw().x - 400) + 280, (_view.getVeiw().y - 300) + 190);
+			_righMtStext.setPosition((_view.getVeiw().x - 400) + 540, (_view.getVeiw().y - 300) + 190);
+			/////////////////////////
+			_retryTextGui.setPosition((_view.getVeiw().x - 400) + 335, (_view.getVeiw().y - 300) + 145);
+			_exitText.setPosition((_view.getVeiw().x - 400) + 350, (_view.getVeiw().y - 300) + 235);
 
 			window.draw(_imgSprite);
 			window.draw(_backText);
 			window.draw(_exitText);
-
+			window.draw(_retryTextGui);
+			window.draw(_musicSText);
+			window.draw(_righMtStext);
+			window.draw(_leftMSText);
 
 		}
 	}
@@ -328,6 +481,13 @@ void gui::Draw(sf::RenderWindow & window)
 	{
 		_endSprite.setPosition(_view.getVeiw().x - 400, _view.getVeiw().y - 300);
 		window.draw(_endSprite);
+		char tmp[20];
+		sprintf_s(tmp, "%i", _player->getScore());
+		_scoreText.setPosition(_view.getVeiw().x, _view.getVeiw().y + 70);
+		_scoreText.setColor(sf::Color::White);
+		_scoreText.setString(tmp);
+		window.draw(_scoreText);
+
 		return;
 	}
 	_inventary.updateInventary();

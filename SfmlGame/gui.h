@@ -5,6 +5,8 @@
 #include "inventary.h"
 #include"game_map.h"
 #include"enamies.h"
+#include"menusettings.h"
+#include"SFML\Audio.hpp"
 
 class gui
 {
@@ -17,6 +19,11 @@ private:
 
 	player* _player;
 	view _view;
+
+	
+	sf::Text _musicSText;
+	sf::Text _leftMSText;
+	sf::Text _righMtStext;
 
 	//entity _hurt;
 	//entity _coin;
@@ -34,6 +41,7 @@ private:
 	sf::Text _timeText;
 	sf::Text _scoreText;
 	sf::Text _retryText;
+	sf::Text _retryTextGui;
 	///////////////////////////////
 
 	sf::Image _black;
@@ -62,7 +70,8 @@ private:
 
 	inventary _inventary;
 
-
+	bool _isPlay = true;
+	sf::Music* _music;
 
 public:
 	gui();
@@ -72,7 +81,22 @@ public:
 	void setImage();
 	void setPlayerGui(player* pl);
 	void window(bool isbiger);
-	
+	void setMusic(bool sm)
+	{
+		_isPlay = sm;
+		if (_isPlay)
+		{
+			_musicSText.setString("music on");
+		}
+		else
+		{
+			_musicSText.setString("music off");
+		}
+	}
+	void setMusic(sf::Music& sm)
+	{
+		_music = &sm;
+	}
 	void setRenderWindow(sf::RenderWindow& window);
 	
 	void menu(sf::RenderWindow& window);

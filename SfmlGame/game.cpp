@@ -16,6 +16,8 @@ game::game()
 	if (_menuGame.menuGame() == 2) {
 		return;
 	}
+	_gui.setMusic(_menuGame.getMusic());
+	_gui.setMusic(_menuGame.getOnOff());
 	_gui.window(_menuGame.isBigerWindow());
 	window.clear();
 
