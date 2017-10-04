@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="17" height="13" tilewidth="48" tileheight="48" nextobjectid="602">
+ <tileset firstgid="1" name="Tileset" tilewidth="48" tileheight="48" tilecount="385" columns="35">
+  <image source="image/Tileset.png" width="1683" height="545"/>
+ </tileset>
+ <layer name="Слой тайлов 1" width="17" height="13">
+  <data>
+   <tile gid="247"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="201"/>
+   <tile gid="191"/>
+   <tile gid="191"/>
+   <tile gid="191"/>
+   <tile gid="191"/>
+   <tile gid="191"/>
+   <tile gid="247"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="201"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="259"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="257"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="65"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="45"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="47"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="45"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="39"/>
+   <tile gid="37"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="115"/>
+   <tile gid="37"/>
+   <tile gid="39"/>
+   <tile gid="113"/>
+   <tile gid="37"/>
+   <tile gid="251"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="39"/>
+   <tile gid="37"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="253"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="255"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="53"/>
+   <tile gid="191"/>
+   <tile gid="191"/>
+   <tile gid="191"/>
+   <tile gid="191"/>
+   <tile gid="191"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="259"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="55"/>
+   <tile gid="257"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="39"/>
+   <tile gid="39"/>
+   <tile gid="37"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="39"/>
+   <tile gid="63"/>
+   <tile gid="37"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="39"/>
+   <tile gid="113"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="39"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="39"/>
+   <tile gid="39"/>
+   <tile gid="39"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="39"/>
+   <tile gid="53"/>
+   <tile gid="49"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="39"/>
+   <tile gid="37"/>
+   <tile gid="249"/>
+   <tile gid="249"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="43"/>
+   <tile gid="37"/>
+   <tile gid="37"/>
+   <tile gid="53"/>
+   <tile gid="205"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="51"/>
+   <tile gid="203"/>
+  </data>
+ </layer>
+ <objectgroup name="Слой объектов 1">
+  <object id="1" name="solid" x="3" y="5" width="45" height="599"/>
+  <object id="2" name="solid" x="46" y="8" width="820" height="39"/>
+  <object id="4" name="solid" x="47" y="575" width="805" height="49"/>
+  <object id="5" name="solid" x="767" y="46" width="54" height="528"/>
+  <object id="6" name="grass" x="144" y="240" width="48" height="48"/>
+  <object id="7" name="grass" x="96" y="192" width="48" height="48"/>
+  <object id="8" name="grass" x="144" y="192" width="48" height="48"/>
+  <object id="10" name="grass" x="192" y="192" width="48" height="48"/>
+  <object id="11" name="grass" x="192" y="240" width="48" height="48"/>
+  <object id="12" name="grass" x="96" y="240" width="48" height="48"/>
+  <object id="14" name="solid" x="239" y="48" width="337" height="96"/>
+  <object id="15" name="solid" x="240" y="192" width="336" height="144"/>
+  <object id="17" name="solid" x="96" y="288" width="144" height="48"/>
+  <object id="19" name="plate" x="163.334" y="160.555" width="11.6889" height="8.24445"/>
+  <object id="22" name="doorright" x="528" y="144" width="48" height="48"/>
+  <object id="23" name="lockdoor" x="48" y="288" width="48" height="48"/>
+  <object id="28" name="grass" x="144" y="336" width="48" height="48"/>
+  <object id="29" name="grass" x="192" y="336" width="48" height="48"/>
+  <object id="522" name="chess" x="292" y="339" width="48" height="48"/>
+  <object id="523" name="grass" x="384" y="337" width="48" height="48"/>
+  <object id="524" name="grass" x="624" y="527" width="48" height="48"/>
+  <object id="525" name="grass" x="576" y="480" width="48" height="48"/>
+  <object id="526" name="grass" x="672" y="480" width="48" height="48"/>
+  <object id="527" name="grass" x="624" y="240" width="48" height="48"/>
+  <object id="528" name="grass" x="624" y="144" width="48" height="48"/>
+  <object id="529" name="grass" x="720" y="48" width="48" height="48"/>
+  <object id="530" name="chess" x="545" y="338" width="48" height="48"/>
+  <object id="532" name="chess" x="581" y="51" width="48" height="48"/>
+  <object id="533" name="solid" x="576" y="192" width="191" height="47"/>
+  <object id="542" name="solid" x="432" y="336" width="96" height="95.25"/>
+  <object id="544" name="solid" x="432" y="480.75" width="96" height="94.25"/>
+  <object id="553" name="bottle" x="660" y="82.5" width="24.3333" height="23.6667"/>
+  <object id="562" name="endblock" x="673.333" y="388.667" width="41.6667" height="38"/>
+  <object id="569" name="botFox" x="310.667" y="512.667" width="38" height="34"/>
+  <object id="571" name="spawn" x="143.333" y="95.3333" width="48.6667" height="46.6667"/>
+  <object id="578" name="boxbot" x="69.6667" y="357" width="345.333" height="201.667"/>
+  <object id="579" name="boxbot" x="586" y="58" width="173" height="126"/>
+  <object id="580" name="botFox" x="705" y="143" width="37" height="38"/>
+  <object id="581" name="coper" x="288" y="144" width="49" height="47.5"/>
+  <object id="582" name="opengold" x="46" y="253.333" width="51.3333" height="44.6667"/>
+  <object id="584" name="goldkey" x="590.333" y="104.333" width="28" height="34"/>
+  <object id="586" name="coper" x="145.5" y="432.25" width="49" height="47.5"/>
+  <object id="587" name="sword" x="194" y="69" width="38.5" height="32"/>
+  <object id="588" name="hauberkArmor" x="703" y="270.5" width="29.5" height="28.5"/>
+  <object id="590" name="hauberkArmor" x="103.5" y="156.5" width="31.5" height="23"/>
+  <object id="591" name="lockdoor" x="432" y="432" width="48" height="48"/>
+  <object id="592" name="opensilverright" x="413.333" y="433" width="51.3333" height="44.6667"/>
+  <object id="593" name="silverkey" x="106" y="348.667" width="20.6667" height="25"/>
+ </objectgroup>
+ <layer name="Слой тайлов 2" width="17" height="13">
+  <data>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="61"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="37"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="61"/>
+   <tile gid="37"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+  </data>
+ </layer>
+</map>

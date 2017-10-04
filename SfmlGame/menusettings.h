@@ -59,6 +59,7 @@ public:
 		{
 			return false;
 		}
+		return false;
 	}
 
 	int menuGame();

@@ -269,7 +269,7 @@ void gui::menu(sf::RenderWindow & window)
 				}
 				if (_menuNum == 5)
 				{
-					if (_musicSText.getString() == "music oof")
+					if (_musicSText.getString() == "music off")
 					{
 						_music->play();
 						_musicSText.setString("music on");
@@ -280,7 +280,7 @@ void gui::menu(sf::RenderWindow & window)
 					if (_musicSText.getString()=="music on")
 					{
 						_music->stop();
-						_musicSText.setString("music oof");
+						_musicSText.setString("music off");
 					}
 				}
 				
