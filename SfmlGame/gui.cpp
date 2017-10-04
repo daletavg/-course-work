@@ -86,6 +86,9 @@ void gui::setImage()
 	_end.loadFromFile("image//endgame.png");
 	_endText.loadFromImage(_end);
 	_endSprite.setTexture(_endText);
+	_end2.loadFromFile("image//endgame2.png");
+	_endText2.loadFromImage(_end2);
+	_endSprite2.setTexture(_endText2);
 	///////////////////////////////////////////////
 	_black.loadFromFile("image//black.png");
 	_blackText.loadFromImage(_black);
@@ -447,7 +450,7 @@ void gui::gameOver(sf::RenderWindow& window)
 		_scoreText.setPosition(_view.getVeiw().x, _view.getVeiw().y + 70);
 		_scoreText.setColor(sf::Color(61, 61, 61));
 		_scoreText.setString(tmp);
-		sprintf_s(tmp, "%i:%i:%i", _hGT, _mGT, _sGT);
+		sprintf_s(tmp, "%i:%i:%i", _hGT,_mGT, _sGT);
 		_timeText.setColor(sf::Color(61, 61, 61));
 		_timeText.setPosition(_view.getVeiw().x, _view.getVeiw().y + 120);
 		_timeText.setString(tmp);
@@ -464,29 +467,41 @@ void gui::gameOver(sf::RenderWindow& window)
 		_sGT = _gameTimeClock.getElapsedTime().asSeconds();
 		if (_sGT >= 60)
 		{
+			_gameTimeClock.restart();	
 			_mGT++;
-			_sGT = 0;
+			
 		}
 		if (_mGT >= 60)
 		{
-			_hGT++;
 			_mGT = 0;
+			_hGT++;
+			
 		}
+		
 	}
 
 }
 void gui::Draw(sf::RenderWindow & window)
 {
+
 	if (_player->isEnd())
 	{
 		_endSprite.setPosition(_view.getVeiw().x - 400, _view.getVeiw().y - 300);
 		window.draw(_endSprite);
-		char tmp[20];
-		sprintf_s(tmp, "%i", _player->getScore());
-		_scoreText.setPosition(_view.getVeiw().x, _view.getVeiw().y + 70);
-		_scoreText.setColor(sf::Color::White);
-		_scoreText.setString(tmp);
-		window.draw(_scoreText);
+		if (!_checkMenu)
+		{
+			char tmp[20];
+			sprintf_s(tmp, "%i", _player->getScore());
+			_scoreText.setPosition(_view.getVeiw().x, _view.getVeiw().y + 70);
+			_scoreText.setColor(sf::Color::White);
+			_scoreText.setString(tmp);
+			window.draw(_scoreText);
+		}
+		else
+		{
+			_endSprite2.setPosition(_view.getVeiw().x - 400, _view.getVeiw().y - 300);
+			window.draw(_endSprite2);
+		}
 
 		return;
 	}

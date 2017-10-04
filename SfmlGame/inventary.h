@@ -27,7 +27,7 @@ private:
 			hauberkArmor*h = dynamic_cast<hauberkArmor*>(_inventary[index]);
 			if (h->checkArmor(*_window, _player->getArmor(), _player->getCoordX(), _player->getCoorgY()))
 			{
-				_player->addArmor(h->getArmor());
+				_player->setArmor(h->getArmor());
 				_player->setArmorType(h->getArmorType());
 				_inventary[index] = NullBlock;
 			}

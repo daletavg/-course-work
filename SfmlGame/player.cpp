@@ -38,6 +38,8 @@ void player::moveCharacter()
 			CurrentFrame += 0.009*(*_time); 
 			_DamageBlock.setDamage();
 			_DamageBlock.setRedSprite(getSprite());
+			_DamageBot.setDamage();
+			_DamageBot.setRedSprite(getSprite());
 			if (CurrentFrame > 5) CurrentFrame -= 5; 
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame)+30, 440+ _armorType, -30, 43));
 			update();
@@ -52,6 +54,8 @@ void player::moveCharacter()
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame), 440 + _armorType, 30, 43)); 
 			_DamageBlock.setDamage();
 			_DamageBlock.setRedSprite(getSprite());
+			_DamageBot.setDamage();
+			_DamageBot.setRedSprite(getSprite());
 			setSpeed(0.1);
 			update();
 			return;
@@ -63,6 +67,8 @@ void player::moveCharacter()
 			CurrentFrame += 0.005*(*_time); 
 			_DamageBlock.setDamage();
 			_DamageBlock.setRedSprite(getSprite());
+			_DamageBot.setDamage();
+			_DamageBot.setRedSprite(getSprite());
 			if (CurrentFrame > 2) CurrentFrame -= 2; 
 			getSprite().setTextureRect(IntRect(38 * int(CurrentFrame), 693+ _armorType, 32, 42)); 
 			update();
@@ -76,6 +82,8 @@ void player::moveCharacter()
 			CurrentFrame += 0.009*(*_time);
 			_DamageBlock.setDamage();
 			_DamageBlock.setRedSprite(getSprite());
+			_DamageBot.setDamage();
+			_DamageBot.setRedSprite(getSprite());
 			if (CurrentFrame > 5) CurrentFrame -= 5; 
 			getSprite().setTextureRect(IntRect(36 * int(CurrentFrame ) + 30, 440 + _armorType, -30, 43)); 
 			update();
@@ -84,6 +92,8 @@ void player::moveCharacter()
 		}
 		_DamageBlock.setDamage();
 		_DamageBlock.setRedSprite(getSprite());
+		_DamageBot.setDamage();
+		_DamageBot.setRedSprite(getSprite());
 		getSprite().setTextureRect(IntRect(getImageX(), getImageY() + _armorType, getWidth(), getHeight()));
 		update();
 }
@@ -133,7 +143,25 @@ void player::collision(float Dx, float Dy)
 		sf::FloatRect rect2 = _bots->getDamageRect(j);
 		if (rect.intersects(rect2))
 		{
-			
+			if (_bots->getBot(j)->isDead())
+			{
+				continue;
+			}
+
+			if (_DamageBot.getDamage())
+			{
+				_DamageBot.setDamage(true);
+				if (_armorType!=leather)
+				{
+					addArmor(-(_bots->getBot(j)->getDamage()));
+				}
+				else
+				{
+					addHealth(-(_bots->getBot(j)->getDamage()));
+				}
+				
+			}
+
 			if (_Damage)
 			{
 				_Damage = false;
@@ -215,8 +243,10 @@ void player::collision(float Dx, float Dy)
 
 					if (Keyboard::isKeyPressed(Keyboard::E))
 					{
-						addArmor(h->getArmor());
+						
 						setArmorType(h->getArmorType());
+						setArmor(h->getArmor());
+						
 						_map->reBlock(NullBlock, i);
 
 					}
@@ -292,7 +322,7 @@ void player::collision(float Dx, float Dy)
 				{
 					continue;
 				}
-				h->setPlayerCoord(getCoordX() + getWidth(), getCoorgY() + 2);
+				h->setPlayerCoord(getCoordX() + getWidth()-3, getCoorgY() + 2);
 
 			}
 			if (_map->getName(i) == "nextlvl")

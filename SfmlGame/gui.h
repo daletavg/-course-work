@@ -52,6 +52,10 @@ private:
 	sf::Texture _endText;
 	sf::Sprite _endSprite;
 
+	sf::Image _end2;
+	sf::Texture _endText2;
+	sf::Sprite _endSprite2;
+
 
 	sf::Text _backText;
 	sf::Text _exitText;
@@ -72,6 +76,8 @@ private:
 
 	bool _isPlay = true;
 	sf::Music* _music;
+
+	bool _setSec = false;
 
 public:
 	gui();

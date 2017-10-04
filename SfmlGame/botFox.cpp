@@ -138,6 +138,7 @@ void botFox::collision(float Dx, float Dy)
 }
 
 
+
 game_map* botFox::getMap() {
 	return _map;
 }

@@ -16,7 +16,7 @@ private:
 
 	int _coins = 0;
 
-	int _HP = 100;
+	int _HP = 70;
 	float _Speed;
 	int _Damage=0;
 	int _Score=0;
@@ -103,9 +103,9 @@ public:
 			_isDead = true;
 			return false;
 		}
-		if (_HP + hp >= 130)
+		if (_HP + hp >= 105)
 		{
-			_HP = 130;
+			_HP = 105;
 			return true;
 
 		}

@@ -73,8 +73,19 @@ public:
 	{
 		_armorType = arm;
 	}
+	void setArmor(int arm)
+	{
+		_armor = arm;
+	}
 	void addArmor(int arm)
 	{
+		
+		if (_armor+arm<=0)
+		{
+			_armorType = leather;
+			_armor = 0;
+			return;
+		}
 		_armor += arm;
 	}
 	int getArmor()
