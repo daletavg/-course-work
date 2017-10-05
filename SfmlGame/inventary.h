@@ -54,7 +54,11 @@ public:
 	{
 		return _inventary[index];
 	}
-	
+	void delItemOnInventory(int index)
+	{
+
+		_inventary[index] = NullBlock;
+	}
 	void checkAct()
 	{
 		if (Keyboard::isKeyPressed(Keyboard::Num1))
@@ -72,6 +76,23 @@ public:
 		if (Keyboard::isKeyPressed(Keyboard::Num4))
 		{
 			checkAct(3);
+		}
+		/////////////////////////
+		if (Keyboard::isKeyPressed(Keyboard::U))
+		{
+			delItemOnInventory(0);
+		}
+		if (Keyboard::isKeyPressed(Keyboard::I))
+		{
+			delItemOnInventory(1);
+		}
+		if (Keyboard::isKeyPressed(Keyboard::O))
+		{
+			delItemOnInventory(2);
+		}
+		if (Keyboard::isKeyPressed(Keyboard::P))
+		{
+			delItemOnInventory(3);
 		}
 	}
 

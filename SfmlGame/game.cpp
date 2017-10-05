@@ -7,7 +7,7 @@
 
 game::game()
 {
-	window.create(VideoMode(800, 600), "Game", sf::Style::Close);
+	window.create(VideoMode(800, 600), "Dungeon", sf::Style::Close);
 	sf::Image icon;
 	icon.loadFromFile("image/icon.png");
 	window.setIcon(20, 28, icon.getPixelsPtr());

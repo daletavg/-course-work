@@ -29,20 +29,20 @@ public:
 	}
 	frame* getItems() {
 		setDraw(false);
-	/*	int id = rand() % 10;
+		int id = rand() % 10;
 		frame* f = new frame();
 		if (id==0|| id == 5|| id == 8 || id == 4 || id == 3  ) {
 			bottleHealth* bl = new bottleHealth("bottleHealth", "items.png", sf::FloatRect(_posX, _posY, 25, 36), 49, 289, 25, 36);
 			f = bl;
 		}
-		if (id == 1 || id == 2||  id == 6|| id == 7|| id == 8) {
+		else {
 			coins* cn = new coins("coins", "items.png", sf::FloatRect(_posX, _posY, 38, 36), 248, 43, 38, 36);
 			f = cn;
-		}*/
+		}
 		//hauberkArmor* f = new hauberkArmor("hauberkArmor", "items.png", sf::FloatRect(_posX, _posY, 36, 31), 84, 128, 36, 31);
 		//sword* f = new sword("sword", "items.png", sf::FloatRect(_posX, _posY, 36, 31), 84, 5, 34, 33);
 		//coins* f = new coins("coins", "items.png", sf::FloatRect(_posX, _posY, 38, 36), 248, 43, 38, 36);
-		bottleHealth* f = new bottleHealth("bottleHealth", "items.png", sf::FloatRect(_posX, _posY, 25, 36), 49, 289, 25, 36);
+		//bottleHealth* f = new bottleHealth("bottleHealth", "items.png", sf::FloatRect(_posX, _posY, 25, 36), 49, 289, 25, 36);
 
 		return f;
 	}
